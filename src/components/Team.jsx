@@ -79,28 +79,10 @@ const Team = () => {
 
       {/* Scrollable Carousel Wrapper */}
       <div className="relative w-full group/carousel">
-        
-        {/* Navigation Buttons (visible on hover / focus) */}
-        <button 
-          onClick={() => scroll('left')}
-          className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white text-gray-700 border border-gray-100 rounded-full flex items-center justify-center shadow-lg hover:bg-[#0054D2] hover:text-white transition-all z-10 md:opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 transition-opacity duration-300"
-          aria-label="Scroll Left"
-        >
-          <ArrowLeft className="w-5 h-5" />
-        </button>
-        
-        <button 
-          onClick={() => scroll('right')}
-          className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white text-gray-700 border border-gray-100 rounded-full flex items-center justify-center shadow-lg hover:bg-[#0054D2] hover:text-white transition-all z-10 md:opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 transition-opacity duration-300"
-          aria-label="Scroll Right"
-        >
-          <ArrowRight className="w-5 h-5" />
-        </button>
-
         {/* Scrollable Flex Container */}
         <div 
           ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth py-4 px-2 scrollbar-none snap-x snap-mandatory"
+          className="flex gap-6 overflow-x-auto scroll-smooth pt-4 pb-12 px-2 scrollbar-none snap-x snap-mandatory"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {teamMembers.map((member, index) => (
@@ -116,7 +98,7 @@ const Team = () => {
                 damping: 20,
                 delay: index * 0.05
               }}
-              className="group flex-none w-[280px] sm:w-[320px] snap-start flex flex-col items-start bg-white p-4 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all cursor-pointer"
+              className="group flex-none w-[calc(100vw-48px)] sm:w-[320px] snap-start flex flex-col items-start bg-white p-4 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all cursor-pointer"
             >
               {/* Image */}
               <div className="relative w-full aspect-[4/5] rounded-[1.75rem] overflow-hidden mb-6 bg-gray-200">
@@ -145,7 +127,7 @@ const Team = () => {
               
               {/* Info */}
               <h3 className="text-[1.1rem] font-bold text-[#0B0F19] mb-1.5 px-2">{member.name}</h3>
-              <p className="text-gray-500 text-[12px] leading-relaxed px-2 pb-2 line-clamp-2 text-left">
+              <p className="text-gray-500 text-[12px] leading-relaxed px-2 pb-4 line-clamp-2 text-left">
                 {member.description}
               </p>
             </motion.div>
