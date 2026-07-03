@@ -35,7 +35,7 @@ const TeamHero = () => {
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-gray-200">
               <img 
                 src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1000" 
-                alt="Rudra Samrat - Founder & CEO" 
+                alt="Satyam Samrat Singh - Founder & CEO" 
                 className="w-full h-full object-cover"
               />
             </div>
@@ -52,10 +52,10 @@ const TeamHero = () => {
               FOUNDER & CEO
             </div>
             <h2 className="text-[2.5rem] md:text-[3rem] font-display font-bold text-white mb-6 tracking-tight">
-              Rudra Samrat
+              Satyam Samrat Singh
             </h2>
             <p className="text-gray-400 text-[15px] md:text-[16px] leading-relaxed mb-10 max-w-lg">
-              "Visionary leader with 10+ years in digital transformation. Passionate about helping businesses scale through technology."
+              "At Vector.Ai, we don't just build software; we engineer growth. Our mission is to accelerate digital evolution by creating intelligent, scalable platforms that empower visionary businesses to lead in an AI-driven world."
             </p>
             
             {/* Social Links */}
