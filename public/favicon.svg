@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Clean dark circular background -->
+  <circle cx="64" cy="64" r="60" fill="#0B0F19" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="4" />
+  
+  <!-- Stylized V with arrow/vector head pointing up-right -->
+  <path d="M36 48 L58 84 L88 40" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Arrowhead to complete the vector look -->
+  <path d="M70 40 H88 V58" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Neon red dot on the arrow tip representing AI -->
+  <circle cx="88" cy="40" r="6" fill="#FF1F1F" />
+</svg>

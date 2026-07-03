@@ -1,0 +1,458 @@
+export const servicesData = [
+  {
+    id: 1,
+    slug: 'digital-marketing-services',
+    category: 'Marketing',
+    title: 'Digital Marketing Services',
+    description: 'Comprehensive performance marketing strategies to dominate your market. We craft data-driven campaigns that maximize ROI and drive explosive growth.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    features: ['Google Ads (Search, Display, Video)', 'Facebook & Instagram Ads'],
+    detailedFeatures: [
+      { title: 'Search Engine Marketing', description: 'Professional execution of Google Ads tailored to your specific market requirements and goals.' },
+      { title: 'Social Media Ads', description: 'High-converting ad campaigns on Facebook, Instagram, and LinkedIn to capture your target audience.' },
+      { title: 'Retargeting Campaigns', description: 'Bring back bounced traffic with precision-targeted ads that follow users across the web.' },
+      { title: 'Conversion Tracking', description: 'Advanced analytics setup to track every dollar spent and measure exact ROI.' }
+    ],
+    trustPoints: [
+      { title: 'Proven Track Record', description: 'We have generated over $50M in revenue for our clients across various industries.' },
+      { title: 'Expert Execution', description: 'Our certified media buyers manage your ad spend as if it were their own.' }
+    ]
+  },
+  {
+    id: 2,
+    slug: 'startup-mentorship',
+    category: 'Consulting',
+    title: 'Startup Mentorship',
+    description: 'Expert guidance for early-stage ventures to navigate growth challenges and scaling efficiently in competitive markets.',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    features: ['Business Model Planning', 'Pitch Deck Review'],
+    detailedFeatures: [
+      { title: 'Go-to-Market Strategy', description: 'Crafting a precise launch plan to acquire your first 1000 customers with minimal burn.' },
+      { title: 'Fundraising Prep', description: 'Refining pitch decks, financial models, and narrative to secure seed and Series A funding.' },
+      { title: 'Product-Market Fit', description: 'Validating ideas through rapid prototyping and deep customer interviews.' },
+      { title: 'Operational Scaling', description: 'Building the right team and processes to handle hyper-growth without breaking.' }
+    ],
+    trustPoints: [
+      { title: 'Experienced Founders', description: 'Get mentored by leaders who have successfully built and exited multiple startups.' },
+      { title: 'Venture Network', description: 'Direct introductions to top-tier angel investors and venture capital firms.' }
+    ]
+  },
+  {
+    id: 3,
+    slug: 'it-strategy-consulting',
+    category: 'Consulting',
+    title: 'IT Strategy Consulting',
+    description: 'Align your technology infrastructure and roadmap with your long-term business objectives to drive efficiency and innovation.',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80',
+    features: ['Tech Stack Audit', 'Digital Roadmap Planning'],
+    detailedFeatures: [
+      { title: 'Infrastructure Assessment', description: 'Comprehensive audit of your current servers, software, and security protocols.' },
+      { title: 'Cloud Migration Strategy', description: 'Seamlessly transitioning legacy systems to modern, scalable cloud environments like AWS/Azure.' },
+      { title: 'Cost Optimization', description: 'Identifying redundancies and cutting software bloat to save thousands in recurring fees.' },
+      { title: 'Vendor Management', description: 'Negotiating and selecting the best third-party tech vendors for your specific needs.' }
+    ],
+    trustPoints: [
+      { title: 'Enterprise Experience', description: 'We have architected IT strategies for Fortune 500 companies and fast-growing unicorns.' },
+      { title: 'Vendor Neutrality', description: 'Unbiased recommendations focused solely on what is best for your business.' }
+    ]
+  },
+  {
+    id: 4,
+    slug: 'digital-transformation',
+    category: 'Consulting',
+    title: 'Digital Transformation',
+    description: 'Modernize legacy systems and processes to thrive in the digital age, creating seamless experiences for your employees and customers.',
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80',
+    features: ['Process Automation', 'Cloud Migration'],
+    detailedFeatures: [
+      { title: 'Workflow Digitization', description: 'Replacing paper-based and manual processes with automated digital workflows.' },
+      { title: 'Legacy System Upgrade', description: 'Safely replacing outdated monolithic software with agile, microservices-based architectures.' },
+      { title: 'Change Management', description: 'Training and supporting your team to ensure smooth adoption of new technologies.' },
+      { title: 'Data Centralization', description: 'Breaking down data silos to create a single source of truth for your entire organization.' }
+    ],
+    trustPoints: [
+      { title: 'Seamless Transitions', description: 'Executing complex overhauls with zero disruption to your day-to-day operations.' },
+      { title: 'Holistic Approach', description: 'We transform your tech, your processes, and your team culture simultaneously.' }
+    ]
+  },
+  {
+    id: 5,
+    slug: 'market-research',
+    category: 'Consulting',
+    title: 'Market Research',
+    description: 'Data-driven insights to validate ideas, understand your competition deeply, and uncover hidden opportunities in your industry.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    features: ['Competitor Analysis', 'Customer Surveys'],
+    detailedFeatures: [
+      { title: 'Deep Competitor Analysis', description: 'Reverse-engineering your rivals\' strategies, traffic sources, and pricing models.' },
+      { title: 'User Persona Development', description: 'Creating hyper-detailed profiles of your ideal customers based on real behavioral data.' },
+      { title: 'Trend Forecasting', description: 'Identifying upcoming industry shifts so you can position your brand ahead of the curve.' },
+      { title: 'Pricing Sensitivity', description: 'Determining the exact price points that maximize both volume and profit margins.' }
+    ],
+    trustPoints: [
+      { title: 'Actionable Data', description: 'We don\'t just give you raw numbers; we give you strategic next steps based on the data.' },
+      { title: 'Global Reach', description: 'Capacity to conduct quantitative and qualitative research across 50+ countries.' }
+    ]
+  },
+  {
+    id: 6,
+    slug: 'brand-strategy',
+    category: 'Consulting',
+    title: 'Brand Strategy',
+    description: 'Define who you are, your voice, and why you matter in the crowded marketplace to build lasting loyalty and premium positioning.',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80',
+    features: ['Brand Positioning', 'Voice & Tone Guidelines'],
+    detailedFeatures: [
+      { title: 'Core Identity Mapping', description: 'Defining your mission, vision, values, and the unique emotional hook of your brand.' },
+      { title: 'Visual Direction', description: 'Establishing the foundational aesthetic that will guide all your design efforts.' },
+      { title: 'Messaging Architecture', description: 'Creating clear, compelling taglines and elevator pitches that resonate instantly.' },
+      { title: 'Market Positioning', description: 'Finding the specific "whitespace" in your industry where you can dominate.' }
+    ],
+    trustPoints: [
+      { title: 'Award-Winning Strategists', description: 'Our team has shaped the narratives of some of the world\'s most beloved modern brands.' },
+      { title: 'Psychology-Driven', description: 'Rooting your brand strategy in deep consumer psychology and behavioral science.' }
+    ]
+  },
+  {
+    id: 7,
+    slug: 'cms-development',
+    category: 'Development',
+    title: 'CMS Development',
+    description: 'Flexible content management systems tailored to your specific workflow requirements, empowering your marketing team to move fast.',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
+    features: ['Custom WordPress Themes', 'Plugin Development'],
+    detailedFeatures: [
+      { title: 'Headless CMS Architecture', description: 'Decoupling the frontend from the backend for lightning-fast speeds and omnichannel delivery.' },
+      { title: 'Bespoke Theme Creation', description: 'Pixel-perfect, custom-coded themes that align exactly with your brand identity.' },
+      { title: 'Advanced User Roles', description: 'Setting up complex permission structures for editorial teams and contributors.' },
+      { title: 'Content Migration', description: 'Safely moving thousands of articles and assets from your old platform to the new CMS.' }
+    ],
+    trustPoints: [
+      { title: 'Scalable Architecture', description: 'Systems built to handle millions of monthly visitors without crashing or slowing down.' },
+      { title: 'Editor-Friendly', description: 'Intuitive backend interfaces that require zero technical knowledge for your team to use.' }
+    ]
+  },
+  {
+    id: 8,
+    slug: 'api-integration',
+    category: 'Development',
+    title: 'API Integration',
+    description: 'Seamlessly connect third-party services to your applications for unified operations and automated data flow across your business.',
+    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80',
+    features: ['REST API Development', 'GraphQL Implementation'],
+    detailedFeatures: [
+      { title: 'Custom API Gateways', description: 'Building secure, centralized hubs to manage traffic between your internal microservices.' },
+      { title: 'Third-Party Syncing', description: 'Connecting your app with Stripe, Twilio, Salesforce, and hundreds of other SaaS platforms.' },
+      { title: 'Legacy System Bridging', description: 'Creating modern API wrappers around old databases so they can talk to new web apps.' },
+      { title: 'Real-time WebSockets', description: 'Implementing live data feeds for dashboards, chat apps, and financial tickers.' }
+    ],
+    trustPoints: [
+      { title: 'Bank-Grade Security', description: 'Implementing OAuth2, JWT, and strict rate-limiting to keep your data pipelines secure.' },
+      { title: 'High Availability', description: 'Architecting fault-tolerant integrations that handle downtime of third-party services gracefully.' }
+    ]
+  },
+  {
+    id: 9,
+    slug: 'whatsapp-automation',
+    category: 'Automation & AI',
+    title: 'WhatsApp Automation',
+    description: 'Automate customer interactions and sales directly through WhatsApp. Engage your audience where they already spend their time.',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80',
+    features: ['WhatsApp API setup', 'WhatsApp Chatbot'],
+    detailedFeatures: [
+      { title: 'Official API Integration', description: 'Setup and verification of the official WhatsApp Business API for your brand.' },
+      { title: 'Custom Chatbots', description: 'Intelligent routing and automated responses to handle 80% of customer queries instantly.' },
+      { title: 'Broadcast Campaigns', description: 'Send targeted promotional messages to opted-in customers with 98% open rates.' },
+      { title: 'CRM Sync', description: 'Automatically log conversations and update lead statuses in your existing CRM.' }
+    ],
+    trustPoints: [
+      { title: 'Meta Business Partners', description: 'Direct access to the latest WhatsApp features and priority support.' },
+      { title: 'Compliance Guaranteed', description: 'Strict adherence to WhatsApp messaging policies to protect your number.' }
+    ]
+  },
+  {
+    id: 10,
+    slug: 'email-automation',
+    category: 'Automation & AI',
+    title: 'Email Automation',
+    description: 'Nurture leads and increase conversions with intelligent email flows that send exactly the right message at the right time.',
+    image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=800&q=80',
+    features: ['Drip campaign setup', 'Lead nurturing'],
+    detailedFeatures: [
+      { title: 'Welcome Sequences', description: 'Onboarding new subscribers and converting them into first-time buyers automatically.' },
+      { title: 'Cart Abandonment', description: 'Recovering lost revenue with highly personalized reminder emails and dynamic discounts.' },
+      { title: 'Behavioral Triggers', description: 'Sending emails based on what users click, pages they visit, or actions they take in your app.' },
+      { title: 'A/B Testing Automations', description: 'Continuously optimizing subject lines and send times to maximize open and click rates.' }
+    ],
+    trustPoints: [
+      { title: 'Deliverability Experts', description: 'Ensuring your automated emails land in the primary inbox, not the spam or promotions folder.' },
+      { title: 'Platform Agnostic', description: 'We can build these flows in Klaviyo, Mailchimp, ActiveCampaign, or Hubspot.' }
+    ]
+  },
+  {
+    id: 11,
+    slug: 'ai-voice-agent',
+    category: 'Automation & AI',
+    title: 'AI Voice Agent',
+    description: 'Next-gen AI agents for 24/7 support, sales, and booking. Deploy conversational AI that sounds completely human over the phone.',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80',
+    features: ['Website Voice Assistant', 'AI Sales Agent'],
+    detailedFeatures: [
+      { title: 'Inbound Call Handling', description: 'AI agents that answer FAQs, route calls, and schedule appointments instantly.' },
+      { title: 'Outbound Lead Qualification', description: 'Automated dialing and conversational qualification of thousands of leads per day.' },
+      { title: 'Emotional Intelligence', description: 'Voice models that detect customer frustration and adapt their tone or escalate to a human.' },
+      { title: 'System Integration', description: 'Agents that can directly update your calendar, CRM, or ticketing system during a call.' }
+    ],
+    trustPoints: [
+      { title: 'Ultra-Low Latency', description: 'Sub-500ms response times so conversations feel completely natural and unscripted.' },
+      { title: 'Custom Voice Cloning', description: 'Train the AI to sound exactly like your best sales rep or a specific brand persona.' }
+    ]
+  },
+  {
+    id: 12,
+    slug: 'automation-crm',
+    category: 'Automation & AI',
+    title: 'Automation & CRM',
+    description: 'Streamline your operations with powerful integrations and workflows, eliminating manual data entry and human error.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    features: ['Zapier, Make.com automations', 'Lead routing systems'],
+    detailedFeatures: [
+      { title: 'Complex Workflow Design', description: 'Connecting 5+ different apps to trigger cascading actions from a single event.' },
+      { title: 'CRM Architecture', description: 'Setting up Salesforce or HubSpot with custom objects and automated pipelines.' },
+      { title: 'Automated Invoicing', description: 'Triggering contract creation, signature requests, and invoice generation automatically upon closing a deal.' },
+      { title: 'Data Cleansing Bots', description: 'Scripts that constantly scan your database to merge duplicates and enrich missing info.' }
+    ],
+    trustPoints: [
+      { title: 'Certified Experts', description: 'Our team holds advanced certifications in Zapier, Make, HubSpot, and Salesforce.' },
+      { title: 'Bulletproof Logic', description: 'Extensive error handling so your automations don\'t break when an edge case occurs.' }
+    ]
+  },
+  {
+    id: 13,
+    slug: 'custom-chatbot-dev',
+    category: 'Automation & AI',
+    title: 'Custom Chatbot Dev',
+    description: 'Intelligent conversational agents to automate support and sales on your website, trained on your company\'s specific data.',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80',
+    features: ['NLP Integration', 'Multi-platform Support'],
+    detailedFeatures: [
+      { title: 'RAG Architecture', description: 'Retrieval-Augmented Generation bots that read your PDFs and websites to give 100% accurate answers.' },
+      { title: 'E-commerce Concierge', description: 'Bots that recommend products, check inventory, and handle returns right in the chat window.' },
+      { title: 'Omnichannel Deployment', description: 'Deploying the same bot brain across your Website, Telegram, Slack, and Discord.' },
+      { title: 'Human Handoff', description: 'Seamlessly transferring complex issues to human agents with full conversation context.' }
+    ],
+    trustPoints: [
+      { title: 'Zero Hallucinations', description: 'Strict prompt engineering and guardrails to ensure the bot never invents false information.' },
+      { title: 'Deep Analytics', description: 'Dashboards showing exactly what users are asking and where the bot needs improvement.' }
+    ]
+  },
+  {
+    id: 14,
+    slug: 'data-analytics-ai',
+    category: 'Automation & AI',
+    title: 'Data Analytics & AI',
+    description: 'Transform raw data into actionable business intelligence using advanced AI analytics, machine learning, and visual dashboards.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    features: ['Predictive Analytics', 'Data Visualization Dashboards'],
+    detailedFeatures: [
+      { title: 'Custom Dashboards', description: 'Real-time BI dashboards built in Tableau, PowerBI, or custom React interfaces.' },
+      { title: 'Churn Prediction Models', description: 'AI algorithms that flag which customers are likely to leave before they actually cancel.' },
+      { title: 'Demand Forecasting', description: 'Machine learning models predicting future sales volume to optimize inventory and staffing.' },
+      { title: 'Sentiment Analysis', description: 'Scraping and analyzing thousands of reviews and tweets to measure brand health instantly.' }
+    ],
+    trustPoints: [
+      { title: 'PhD-Level Data Scientists', description: 'Algorithms built by experts who understand the underlying math, not just off-the-shelf tools.' },
+      { title: 'Data Privacy First', description: 'Strict compliance with GDPR and HIPAA when handling and anonymizing sensitive datasets.' }
+    ]
+  },
+  {
+    id: 15,
+    slug: 'business-consulting',
+    category: 'Consulting',
+    title: 'Business Consulting',
+    description: 'Strategic guidance to help you scale your operations, optimize revenue streams, and build a sustainable long-term business model.',
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=800&q=80',
+    features: ['Digital Transformation', 'Growth Strategy'],
+    detailedFeatures: [
+      { title: 'Revenue Operations (RevOps)', description: 'Aligning your sales, marketing, and customer success teams to maximize revenue generation.' },
+      { title: 'M&A Advisory', description: 'Technical and operational due diligence for companies looking to acquire or be acquired.' },
+      { title: 'Organizational Restructuring', description: 'Redesigning team structures and reporting lines for maximum agility and accountability.' },
+      { title: 'Market Expansion', description: 'Strategic playbooks for entering new geographic regions or launching entirely new product lines.' }
+    ],
+    trustPoints: [
+      { title: 'C-Suite Experience', description: 'Consultants who have served as CEOs, COOs, and CROs at major corporations.' },
+      { title: 'Results-Tied Compensation', description: 'We are confident enough in our advice to tie a portion of our fees to your business outcomes.' }
+    ]
+  },
+  {
+    id: 16,
+    slug: 'seo-optimization',
+    category: 'Marketing',
+    title: 'SEO Optimization',
+    description: 'Drive organic traffic and rank higher on search engines with proven strategies. Build long-term visibility for your brand.',
+    image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?auto=format&fit=crop&w=800&q=80',
+    features: ['On-Page SEO', 'Off-Page SEO'],
+    detailedFeatures: [
+      { title: 'Technical SEO Audit', description: 'Deep analysis of your website infrastructure to resolve crawling and indexing issues.' },
+      { title: 'Keyword Strategy', description: 'Identifying high-intent search terms to target users ready to convert.' },
+      { title: 'Content Optimization', description: 'Structuring and writing content that satisfies both search engines and human readers.' },
+      { title: 'Authority Building', description: 'Acquiring high-quality backlinks from relevant, authoritative domains.' }
+    ],
+    trustPoints: [
+      { title: 'White-Hat Techniques', description: 'Sustainable strategies that survive algorithm updates.' },
+      { title: 'Transparent Reporting', description: 'Live dashboards showing exactly how your rankings and organic traffic are growing.' }
+    ]
+  },
+  {
+    id: 17,
+    slug: 'branding-design',
+    category: 'Marketing',
+    title: 'Branding & Design',
+    description: 'Create a lasting impact with world-class design and creative assets that communicate your value proposition instantly.',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80',
+    features: ['Logo Design', 'Brand Identity Design'],
+    detailedFeatures: [
+      { title: 'Logo & Iconography', description: 'Timeless, scalable logo design and custom icon sets that represent your core identity.' },
+      { title: 'Brand Guidelines', description: 'Comprehensive rulebooks for typography, color palettes, and imagery usage.' },
+      { title: 'Marketing Collateral', description: 'Beautifully designed pitch decks, whitepapers, business cards, and social media templates.' },
+      { title: 'Packaging Design', description: 'Premium physical packaging that creates an unforgettable unboxing experience.' }
+    ],
+    trustPoints: [
+      { title: 'Award-Winning Studio', description: 'Designs recognized by Awwwards, Behance, and international design councils.' },
+      { title: 'Strategic Aesthetics', description: 'Design choices driven by market research and target audience psychology, not just trends.' }
+    ]
+  },
+  {
+    id: 18,
+    slug: 'content-marketing',
+    category: 'Marketing',
+    title: 'Content Marketing',
+    description: 'Strategic content creation that drives traffic, engagement, and conversions. Establish your brand as an industry thought leader.',
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80',
+    features: ['Blog Writing & Strategy', 'Video Scriptwriting'],
+    detailedFeatures: [
+      { title: 'Long-Form Articles', description: 'In-depth, SEO-optimized blog posts that rank high and provide massive value to readers.' },
+      { title: 'Video Production', description: 'Scripting, shooting, and editing high-retention videos for YouTube, TikTok, and Reels.' },
+      { title: 'Lead Magnets', description: 'Designing irresistible ebooks, templates, and webinars that capture email addresses.' },
+      { title: 'Content Repurposing', description: 'Turning one podcast episode into 10 tweets, 3 LinkedIn posts, and a blog article.' }
+    ],
+    trustPoints: [
+      { title: 'Industry-Specific Writers', description: 'Content written by subject matter experts, not generalist copywriters.' },
+      { title: 'Conversion Focused', description: 'Every piece of content is engineered with a specific business goal and CTA in mind.' }
+    ]
+  },
+  {
+    id: 19,
+    slug: 'social-media-management',
+    category: 'Marketing',
+    title: 'Social Media Management',
+    description: 'Build a loyal community and increase brand awareness on all major platforms through consistent, engaging, and native content.',
+    image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80',
+    features: ['Content Calendar Planning', 'Community Management'],
+    detailedFeatures: [
+      { title: 'Multi-Platform Strategy', description: 'Tailored content for LinkedIn (B2B), Instagram (Visual), and X (Real-time).' },
+      { title: 'Community Engagement', description: 'Active daily interaction with your followers, responding to comments and DMs to build loyalty.' },
+      { title: 'Influencer Partnerships', description: 'Identifying, negotiating, and managing campaigns with micro and macro influencers.' },
+      { title: 'Viral Trend Jacking', description: 'Agile content creation to capitalize on trending audio and memes while staying on-brand.' }
+    ],
+    trustPoints: [
+      { title: 'Always-On Approach', description: 'We monitor your social channels 7 days a week to protect brand reputation.' },
+      { title: 'Data-Backed Posting', description: 'Algorithms determine exactly what time and day yields the highest engagement for your audience.' }
+    ]
+  },
+  {
+    id: 20,
+    slug: 'ppc-advertising',
+    category: 'Marketing',
+    title: 'PPC Advertising',
+    description: 'Maximize your ROI with targeted Pay-Per-Click campaigns across search and display networks, driving instant qualified traffic.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    features: ['Google Search Ads', 'Display Advertising'],
+    detailedFeatures: [
+      { title: 'Search Intent Campaigns', description: 'Bidding on bottom-of-funnel keywords to capture users who are ready to buy immediately.' },
+      { title: 'Programmatic Display', description: 'Placing highly visual banner ads on premium websites where your audience hangs out.' },
+      { title: 'Shopping Ads Optimization', description: 'Managing Google Merchant Center feeds to dominate product search results.' },
+      { title: 'Landing Page Optimization', description: 'A/B testing the destination pages to ensure the paid traffic actually converts into sales.' }
+    ],
+    trustPoints: [
+      { title: 'Google Premier Partners', description: 'Top 3% of agencies globally, giving us beta access to new ad features.' },
+      { title: 'Zero Wasted Spend', description: 'Aggressive negative keyword management and placement exclusions to protect your budget.' }
+    ]
+  },
+  {
+    id: 21,
+    slug: 'website-development',
+    category: 'Development',
+    title: 'Website Development',
+    description: 'Custom, high-performance websites tailored to your specific business needs. We build blazing-fast, scalable web applications.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80',
+    features: ['Business Websites', 'E-commerce Stores'],
+    detailedFeatures: [
+      { title: 'Custom Web Apps', description: 'Full-stack web applications built with modern frameworks like React and Next.js.' },
+      { title: 'E-commerce Solutions', description: 'High-converting online stores built on Shopify or custom headless commerce platforms.' },
+      { title: 'Responsive Design', description: 'Flawless experiences across all devices, from ultra-wide monitors to mobile phones.' },
+      { title: 'Performance Optimization', description: 'Sub-second load times and perfect Core Web Vitals scores for maximum SEO benefit.' }
+    ],
+    trustPoints: [
+      { title: 'Modern Tech Stack', description: 'We use the latest technologies to ensure your website is future-proof and scalable.' },
+      { title: 'Security First', description: 'Enterprise-grade security practices to protect your data and your users.' }
+    ]
+  },
+  {
+    id: 22,
+    slug: 'app-development',
+    category: 'Development',
+    title: 'App Development',
+    description: 'Native and cross-platform mobile applications for iOS and Android. Build engaging mobile experiences that users love.',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80',
+    features: ['iOS App Development', 'Android App Development'],
+    detailedFeatures: [
+      { title: 'Cross-Platform Apps', description: 'Efficient development using React Native to deploy on both iOS and Android from a single codebase.' },
+      { title: 'Native iOS/Android', description: 'High-performance native applications in Swift and Kotlin for demanding use cases.' },
+      { title: 'UI/UX Design', description: 'Intuitive and beautiful mobile interfaces designed specifically for touch interactions.' },
+      { title: 'App Store Optimization', description: 'Strategic publishing to maximize visibility and downloads in Apple and Google stores.' }
+    ],
+    trustPoints: [
+      { title: 'Top Rated Agency', description: 'Our apps have achieved millions of downloads and 4.9+ star ratings.' },
+      { title: 'End-to-End Delivery', description: 'From concept and design to development, testing, and App Store launch.' }
+    ]
+  },
+  {
+    id: 23,
+    slug: 'ecommerce-solutions',
+    category: 'Development',
+    title: 'E-commerce Solutions',
+    description: 'Scalable online stores built on Shopify, WooCommerce, or custom stacks to maximize sales and streamline inventory management.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80',
+    features: ['Shopify & WooCommerce', 'Custom Cart Development'],
+    detailedFeatures: [
+      { title: 'Headless Commerce', description: 'Separating the frontend shopping experience from the backend inventory for ultra-fast load speeds.' },
+      { title: 'Custom Checkout Flows', description: 'Reducing cart abandonment by removing friction and adding one-click upsell capabilities.' },
+      { title: 'ERP/Inventory Sync', description: 'Connecting your storefront directly to SAP, NetSuite, or warehouse management systems.' },
+      { title: 'Subscription Models', description: 'Building complex recurring billing systems for subscription box and SaaS companies.' }
+    ],
+    trustPoints: [
+      { title: 'High-Volume Specialists', description: 'We build stores capable of handling massive traffic spikes during Black Friday and product drops.' },
+      { title: 'Conversion Rate Optimized', description: 'Every pixel of the store is designed based on proven e-commerce conversion principles.' }
+    ]
+  },
+  {
+    id: 24,
+    slug: 'ui-ux-design',
+    category: 'Development',
+    title: 'UI/UX Design',
+    description: 'User-centric designs that ensure intuitive navigation, reduce friction, and deliver exceptional digital experiences across all touchpoints.',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80',
+    features: ['Wireframing', 'Interactive Prototyping'],
+    detailedFeatures: [
+      { title: 'User Journey Mapping', description: 'Plotting every interaction a user has with your product to eliminate confusing dead-ends.' },
+      { title: 'High-Fidelity Prototyping', description: 'Clickable Figma prototypes that look and feel exactly like the final coded product.' },
+      { title: 'Usability Testing', description: 'Putting designs in front of real users and recording their sessions to find points of friction.' },
+      { title: 'Design Systems', description: 'Creating comprehensive component libraries so your future development scales consistently.' }
+    ],
+    trustPoints: [
+      { title: 'Data-Driven Design', description: 'We don\'t rely on gut feelings; our design decisions are backed by heatmaps and analytics.' },
+      { title: 'Accessibility Compliant', description: 'Ensuring your digital products meet WCAG 2.1 AA standards for users with disabilities.' }
+    ]
+  }
+];
