@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home, Briefcase, CreditCard, Users, Folder, FileText, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -32,6 +32,19 @@ const Navbar = () => {
     if (link === 'Blog') path = '/blog';
     if (link === 'Contact') path = '/contact';
     return path;
+  };
+
+  const getIcon = (link) => {
+    switch (link) {
+      case 'Home': return <Home className="w-5 h-5" />;
+      case 'Service': return <Briefcase className="w-5 h-5" />;
+      case 'Pricing': return <CreditCard className="w-5 h-5" />;
+      case 'Team': return <Users className="w-5 h-5" />;
+      case 'Project': return <Folder className="w-5 h-5" />;
+      case 'Blog': return <FileText className="w-5 h-5" />;
+      case 'Contact': return <Mail className="w-5 h-5" />;
+      default: return null;
+    }
   };
 
   return (
@@ -104,7 +117,7 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[101] lg:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999] lg:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div 
@@ -112,7 +125,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 bottom-0 w-[85%] max-w-[320px] bg-white z-[102] lg:hidden flex flex-col shadow-2xl"
+              className="fixed inset-y-0 left-0 w-[80%] max-w-[300px] h-[100dvh] bg-white z-[1000] lg:hidden flex flex-col shadow-2xl"
             >
               <div className="p-6 border-b border-gray-100 flex items-center justify-between">
                 <div className="flex flex-col">
@@ -132,7 +145,7 @@ const Navbar = () => {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto py-6 px-6 flex flex-col gap-6">
+              <div className="flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-1.5">
                 {navLinks.map((link) => {
                   const path = getPath(link);
                   const isActive = location.pathname === path;
@@ -141,9 +154,14 @@ const Navbar = () => {
                     <Link
                       key={link}
                       to={path}
-                      className={`text-[20px] tracking-tight ${isActive ? 'font-extrabold text-black' : 'font-medium text-gray-600'}`}
+                      className={`flex items-center gap-4 px-4 py-3.5 rounded-xl text-[16px] transition-all duration-200 ${
+                        isActive 
+                          ? 'font-extrabold text-[#0054D2] bg-[#0054D2]/5' 
+                          : 'font-medium text-gray-600 hover:text-black hover:bg-gray-50'
+                      }`}
                     >
-                      {link}
+                      {getIcon(link)}
+                      <span>{link}</span>
                     </Link>
                   );
                 })}
