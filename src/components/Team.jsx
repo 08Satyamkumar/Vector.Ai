@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
@@ -102,10 +103,20 @@ const Team = () => {
           className="flex gap-6 overflow-x-auto scroll-smooth py-4 px-2 scrollbar-none snap-x snap-mandatory"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {teamMembers.map((member) => (
-            <div
+          {teamMembers.map((member, index) => (
+            <motion.div
               key={member.id}
-              className="group flex-none w-[280px] sm:w-[320px] snap-start flex flex-col items-start bg-white p-4 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ 
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: index * 0.05
+              }}
+              className="group flex-none w-[280px] sm:w-[320px] snap-start flex flex-col items-start bg-white p-4 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all cursor-pointer"
             >
               {/* Image */}
               <div className="relative w-full aspect-[4/5] rounded-[1.75rem] overflow-hidden mb-6 bg-gray-200">
@@ -137,7 +148,7 @@ const Team = () => {
               <p className="text-gray-500 text-[12px] leading-relaxed px-2 pb-2 line-clamp-2 text-left">
                 {member.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
