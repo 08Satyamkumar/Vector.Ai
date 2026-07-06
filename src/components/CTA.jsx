@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const CTA = () => {
   return (
@@ -56,12 +57,12 @@ const CTA = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto">
-              <a
-                href="#quote"
+              <Link
+                to="/contact"
                 className="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-8 py-3.5 bg-white text-[#0B0F19] rounded-full text-[15px] font-bold hover:bg-gray-100 transition-colors"
               >
-                Get Your Free Quote <ArrowRight className="w-4 h-4" />
-              </a>
+                Let's Discuss <ArrowRight className="w-4 h-4" />
+              </Link>
               <a
                 href="#success-stories"
                 className="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-8 py-3.5 bg-transparent text-white border border-white/20 rounded-full text-[15px] font-medium hover:bg-white/5 transition-colors"

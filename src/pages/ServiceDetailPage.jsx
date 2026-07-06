@@ -41,7 +41,7 @@ const ServiceDetailPage = () => {
             
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="px-8 py-3.5 bg-brand-dark text-white rounded-full font-bold text-[14px] hover:bg-black transition-colors">
-                Get a Quote
+                Let's Discuss
               </Link>
               <a href="#features" className="px-8 py-3.5 bg-white text-brand-dark rounded-full font-bold text-[14px] border border-gray-200 hover:bg-gray-50 transition-colors shadow-sm">
                 View Features
