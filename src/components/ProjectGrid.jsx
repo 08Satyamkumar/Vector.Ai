@@ -15,7 +15,7 @@ const ProjectGrid = () => {
       title: 'Prescripto',
       description: 'A doctor appointment booking platform with specialty filtering and profile management.',
       badge: '5k+ Bookings',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800'
+      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800'
     },
     {
       category: 'FOOD DELIVERY',

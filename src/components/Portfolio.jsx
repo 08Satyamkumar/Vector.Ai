@@ -16,7 +16,7 @@ const projects = [
     title: 'Prescripto',
     category: 'Healthcare App',
     badge: '5k+ Bookings',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173ff9e5c1c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 3,
