@@ -4,18 +4,47 @@ import { Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 import { motion } from 'framer-motion';
 
-const ServiceGrid = () => {
-  const services = servicesData.filter(s => s.slug !== 'digital-marketing-services');
+const ServiceGrid = ({ searchQuery = '', selectedCategory = 'All' }) => {
+  const filteredServices = servicesData.filter(service => {
+    // Exclude the popular main banner service from the grid unless we are actively searching or filtering by category
+    const isMainBanner = service.slug === 'digital-marketing-services';
+    if (isMainBanner && searchQuery === '' && selectedCategory === 'All') {
+      return false;
+    }
+
+    // Category filter logic
+    const matchesCategory = selectedCategory === 'All' || service.category.toLowerCase() === selectedCategory.toLowerCase();
+
+    // Search query filter logic
+    const matchesSearch = searchQuery === '' || 
+      service.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.features.some(f => f.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    return matchesCategory && matchesSearch;
+  });
+
+  if (filteredServices.length === 0) {
+    return (
+      <section className="w-full max-w-[88rem] mx-auto px-6 lg:px-16 pb-24 text-center py-20">
+        <div className="bg-white rounded-3xl p-12 shadow-sm border border-gray-100 max-w-lg mx-auto">
+          <h3 className="text-xl font-bold text-[#0B0F19] mb-2">No Services Found</h3>
+          <p className="text-gray-500 text-[14px]">We couldn't find any services matching "{searchQuery}" under "{selectedCategory}". Try searching for another keyword.</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="w-full max-w-[88rem] mx-auto px-6 lg:px-16 pb-24">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => (
+        {filteredServices.map((service, index) => (
           <motion.div
             key={service.id}
             initial={{ y: 60, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
             className="h-full"
           >
             <Link to={`/services/${service.slug}`} className="bg-white rounded-3xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col h-full">

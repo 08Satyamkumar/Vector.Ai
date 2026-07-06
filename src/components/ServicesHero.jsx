@@ -1,7 +1,7 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 
-const ServicesHero = () => {
+const ServicesHero = ({ searchQuery, setSearchQuery, selectedCategory, setSelectedCategory }) => {
   const categories = ['All', 'Marketing', 'Development', 'Automation & AI', 'Consulting'];
 
   return (
@@ -30,18 +30,21 @@ const ServicesHero = () => {
         </div>
         <input
           type="text"
-          className="w-full pl-14 pr-6 py-4 rounded-full border-none focus:outline-none focus:ring-2 focus:ring-brand-blue/20 bg-white text-[15px] text-gray-700"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full pl-14 pr-6 py-4 rounded-full border-none focus:outline-none focus:ring-2 focus:ring-[#0054D2]/20 bg-white text-[15px] text-gray-700"
           placeholder="Find a service (e.g., SEO, AI)..."
         />
       </div>
 
       {/* Categories */}
       <div className="flex flex-wrap items-center justify-center gap-3">
-        {categories.map((category, index) => (
+        {categories.map((category) => (
           <button
             key={category}
+            onClick={() => setSelectedCategory(category)}
             className={`px-6 py-2.5 rounded-full text-[14px] font-bold transition-all shadow-sm
-              ${index === 0 
+              ${selectedCategory === category 
                 ? 'bg-[#0B0F19] text-white hover:bg-black' 
                 : 'bg-white text-[#0B0F19] hover:bg-gray-50'
               }
