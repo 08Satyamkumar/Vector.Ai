@@ -157,7 +157,7 @@ export const servicesData = [
     category: 'Automation & AI',
     title: 'WhatsApp Automation',
     description: 'Automate customer interactions and sales directly through WhatsApp. Engage your audience where they already spend their time.',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80',
+    image: '/whatsapp_automation.png',
     features: ['WhatsApp API setup', 'WhatsApp Chatbot'],
     detailedFeatures: [
       { title: 'Official API Integration', description: 'Setup and verification of the official WhatsApp Business API for your brand.' },
