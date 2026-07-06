@@ -33,7 +33,7 @@ const TeamGrid = () => {
     },
     {
       id: 5,
-      name: 'Muskan K@ushik',
+      name: 'Shalu K@ushik',
       role: 'AI AUTOMATION LEAD',
       description: 'Expert strategist specializing in custom AI chatbot integration, CRM automation, and high-converting social media marketing automation.',
       image: '/muskan_kaushik.png',
