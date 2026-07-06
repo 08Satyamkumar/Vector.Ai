@@ -130,9 +130,9 @@ const Footer = () => {
             © 2026 Vector.Ai. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-gray-500 hover:text-white transition-colors text-[13px]">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-white transition-colors text-[13px]">Terms of Service</a>
-            <a href="#" className="text-gray-500 hover:text-white transition-colors text-[13px]">Cookies</a>
+            <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors text-[13px]">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-gray-500 hover:text-white transition-colors text-[13px]">Terms of Service</Link>
+            <Link to="/cookie-policy" className="text-gray-500 hover:text-white transition-colors text-[13px]">Cookies</Link>
           </div>
         </div>
 

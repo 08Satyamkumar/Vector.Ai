@@ -11,6 +11,9 @@ import TeamPage from './pages/TeamPage';
 import ProjectPage from './pages/ProjectPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiePolicy from './pages/CookiePolicy';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 
@@ -30,6 +33,9 @@ function App() {
             <Route path="/project" element={<PageTransition><ProjectPage /></PageTransition>} />
             <Route path="/blog" element={<PageTransition><BlogPage /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+            <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+            <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />
+            <Route path="/cookie-policy" element={<PageTransition><CookiePolicy /></PageTransition>} />
           </Routes>
         </main>
         <Footer />
