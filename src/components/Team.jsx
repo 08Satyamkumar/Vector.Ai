@@ -33,10 +33,10 @@ const teamMembers = [
   },
   {
     id: 5,
-    name: 'Aisha Verma',
-    role: 'HEAD OF DIGITAL MARKETING',
-    description: 'Expert strategist who has managed ad spends over ₹5Cr. Specializes in high-ROI PPC and social media campaigns.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+    name: 'Muskan K@ushik',
+    role: 'AI AUTOMATION LEAD',
+    description: 'Expert strategist specializing in custom AI chatbot integration, CRM automation, and high-converting social media marketing automation.',
+    image: '/muskan_kaushik.png',
   },
   {
     id: 6,
