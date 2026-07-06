@@ -86,8 +86,8 @@ const PricingPlans = () => {
           {plans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative bg-white rounded-[2rem] p-8 flex flex-col h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2
-                ${plan.isPopular ? 'border-2 border-[#0B0F19] shadow-xl md:-mt-4 md:mb-[-1rem]' : 'border border-gray-100 shadow-sm hover:border-[#0B0F19]/20'}
+              className={`relative bg-white rounded-[2rem] p-8 flex flex-col h-full border-2 border-gray-100 transition-all duration-300 hover:border-[#0B0F19] hover:shadow-2xl hover:-translate-y-2
+                ${plan.isPopular ? 'shadow-xl md:-mt-4 md:mb-[-1rem]' : 'shadow-sm'}
               `}
             >
               {/* Popular Badge */}
