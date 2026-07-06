@@ -20,7 +20,7 @@ const FounderQuote = () => {
 
            {/* Left: Avatar */}
           <div className="shrink-0 z-10">
-            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full border-4 border-[#0F1C36] overflow-hidden shadow-2xl relative">
+            <div className="w-40 md:w-52 aspect-[3/4] rounded-[2rem] border-2 border-white/10 overflow-hidden shadow-2xl relative">
               <img
                 src="/satyam_ceo.png"
                 alt="Satyam Samrat Singh"
