@@ -55,6 +55,9 @@ const ContactHero = () => {
                     <a href="tel:+919217571488" className="block text-white text-[16px] font-bold hover:text-[#0054D2] transition-colors">
                       +91 9217571488
                     </a>
+                    <a href="tel:+919122135215" className="block text-white text-[16px] font-bold hover:text-[#0054D2] transition-colors mt-1">
+                      +91 9122135215
+                    </a>
                   </div>
                 </div>
 

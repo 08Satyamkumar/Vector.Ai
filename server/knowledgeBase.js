@@ -40,7 +40,7 @@ KEY SELLING POINTS:
 
 CONTACT:
 - Address: Gaur Yamuna City, Greater Noida, Uttar Pradesh
-- Phone: +91 9217571488
+- Phone: +91 9217571488, +91 9122135215
 - Email: vector.ai09@gmail.com
 
 If a user asks how to get started, tell them to click the "Book a free call" button or visit the Contact page.

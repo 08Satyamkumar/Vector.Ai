@@ -117,6 +117,7 @@ const Footer = () => {
                 </li>
                 <li><a href="mailto:vector.ai09@gmail.com" className="text-gray-400 hover:text-white transition-colors text-[14px]">vector.ai09@gmail.com</a></li>
                 <li><a href="tel:+919217571488" className="text-gray-400 hover:text-white transition-colors text-[14px]">+91 9217571488</a></li>
+                <li><a href="tel:+919122135215" className="text-gray-400 hover:text-white transition-colors text-[14px]">+91 9122135215</a></li>
               </ul>
             </div>
 
