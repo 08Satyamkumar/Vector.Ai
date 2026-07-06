@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const teamMembers = [
   {
     id: 1,
-    name: 'Shivam Kaushik',
+    name: 'Shivam K@ushik',
     role: 'FULL STACK DEVELOPER',
     description: 'Full-stack wizard responsible for the robust and scalable architecture behind our client solutions.',
     image: '/shivam_kaushik.png',
