@@ -5,17 +5,17 @@ import { motion } from 'framer-motion';
 const teamMembers = [
   {
     id: 1,
-    name: 'Kamlesh Gupta',
+    name: 'Shivam Kaushik',
     role: 'FULL STACK DEVELOPER',
     description: 'Full-stack wizard responsible for the robust and scalable architecture behind our client solutions.',
-    image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80',
+    image: '/shivam_kaushik.png',
   },
   {
     id: 2,
-    name: 'Deepesh Patel',
+    name: 'Adarsh Bhardwaj',
     role: 'SENIOR FULL STACK DEVELOPER',
     description: 'Specialist in MERN stack and cloud architecture. Builds scalable backend systems for high-traffic applications.',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80',
+    image: '/adarsh_bhardwaj.png',
   },
   {
     id: 3,
