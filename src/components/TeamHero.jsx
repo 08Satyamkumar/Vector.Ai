@@ -34,7 +34,7 @@ const TeamHero = () => {
           <div className="relative w-full md:w-2/5 shrink-0">
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-gray-200">
               <img 
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1000" 
+                src="/satyam_ceo.png" 
                 alt="Satyam Samrat Singh - Founder & CEO" 
                 className="w-full h-full object-cover"
               />

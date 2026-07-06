@@ -22,7 +22,7 @@ const FounderQuote = () => {
           <div className="shrink-0 z-10">
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full border-4 border-[#0F1C36] overflow-hidden shadow-2xl relative">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" // TO USE YOUR OWN PHOTO: Put your image (e.g. satyam.jpg) in the 'public' folder and change this src to "/satyam.jpg"
+                src="/satyam_ceo.png"
                 alt="Satyam Samrat Singh"
                 className="w-full h-full object-cover"
               />
