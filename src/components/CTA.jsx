@@ -52,7 +52,7 @@ const CTA = () => {
 
             {/* Paragraph */}
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
-              Stop guessing with your marketing budget. Join hundreds of fast-growing companies using Scallar's data-driven strategies.
+              Stop guessing with your marketing budget. Join hundreds of fast-growing companies using Vector.Ai's data-driven strategies.
             </p>
 
             {/* Buttons */}

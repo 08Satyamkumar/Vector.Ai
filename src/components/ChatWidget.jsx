@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'ai', content: 'Hi there! I am Maya, Scallar\'s AI assistant. How can I help you today?' }
+    { role: 'ai', content: 'Hi there! I am Maya, Vector.Ai\'s AI assistant. How can I help you today?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -154,7 +154,7 @@ const ChatWidget = () => {
                 </button>
               </form>
               <div className="text-center mt-3 text-gray-400 text-[10px] font-medium">
-                Powered by <span className="text-gray-600 font-bold">Scallar IT Solution</span>
+                Powered by <span className="text-gray-600 font-bold">Vector.Ai IT Solution</span>
               </div>
             </div>
 

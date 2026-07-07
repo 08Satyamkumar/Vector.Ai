@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
-import { scallarKnowledgeBase } from './knowledgeBase.js';
+import { vectorKnowledgeBase } from './knowledgeBase.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -37,7 +37,7 @@ app.post('/api/chat', async (req, res) => {
     let conversationHistory = messages.map(m => `${m.role === 'user' ? 'User' : 'Maya'}: ${m.content}`).join('\n');
 
     const prompt = `
-${scallarKnowledgeBase}
+${vectorKnowledgeBase}
 
 Here is the conversation history:
 ${conversationHistory}
