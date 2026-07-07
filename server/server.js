@@ -171,11 +171,15 @@ Maya: `;
       const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || 'https://script.google.com/macros/s/AKfycbwk6hv5GTzktgUpu5upRHqwGbL5m89n4meOkoT8-uQKVjahw8lAEU97HDXx8PD_ZAv78A/exec';
       const leadData = replyData.action.data || {};
       if (leadData.name || leadData.email || leadData.phone) {
-        fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(leadData)
-        }).catch(err => console.error("Error sending lead to Google Sheet Webhook:", err));
+        try {
+          await fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadData)
+          });
+        } catch (err) {
+          console.error("Error sending lead to Google Sheet Webhook:", err);
+        }
       }
     }
 
