@@ -149,7 +149,7 @@ ${conversationHistory}
 Maya: `;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-lite',
+      model: 'gemini-flash-lite-latest',
       contents: prompt,
       config: {
         responseMimeType: 'application/json'
@@ -186,10 +186,10 @@ Maya: `;
     res.json(replyData);
   } catch (error) {
     console.error('Error generating AI response:', error);
-    res.status(500).json({ 
-      error: 'Failed to generate response. Please try again.',
-      details: error.message,
-      stack: error.stack
+    // Fail-safe fallback response to prevent Chat Widget from showing "Sorry..." error box
+    res.json({
+      reply: "Aapka message mil gaya hai! Lekin thoda server load hone ki wajah se reply me deri ho sakti hai. Aap aage badhne ke liye humse direct **+91 9217571488** par call ya WhatsApp par contact kar sakte hain! Hum hamesha aapki madad ke liye ready hain. 😊",
+      action: null
     });
   }
 });
