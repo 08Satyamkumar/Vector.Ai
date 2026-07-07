@@ -166,11 +166,13 @@ Maya: `;
         action: null
       };
     }
-    // Intercept form submission to write lead data to Google Sheet Webhook
-    if (replyData.action && replyData.action.type === 'SUBMIT_FORM') {
+    // Auto-save lead to Google Sheet as soon as we have Name + (Phone or Email)
+    if (replyData.action && replyData.action.data) {
       const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || 'https://script.google.com/macros/s/AKfycbwk6hv5GTzktgUpu5upRHqwGbL5m89n4meOkoT8-uQKVjahw8lAEU97HDXx8PD_ZAv78A/exec';
       const leadData = replyData.action.data || {};
-      if (leadData.name || leadData.email || leadData.phone) {
+      
+      // Minimum lead requirement: Name and at least Phone or Email
+      if (leadData.name && (leadData.phone || leadData.email)) {
         try {
           await fetch(webhookUrl, {
             method: 'POST',
