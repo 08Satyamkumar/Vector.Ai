@@ -99,7 +99,7 @@ You MUST output your response in JSON format matching this schema:
   "reply": "Conversational text response to the user. Maintain a friendly, supportive, Hinglish/English tone. Use bold text and emojis to make it interesting like ChatGPT.",
   "action": { // Optional, only include if the user requests an action or if you should guide them to a section.
     "type": "NAVIGATE" | "FILL_FORM" | "SUBMIT_FORM",
-    "path": "/contact" | "/services" | "/pricing" | "/team" | "/project" | "/", // For NAVIGATE action
+    "path": "/contact" | "/services" | "/pricing" | "/team" | "/project" | "/blog" | "/services/digital-marketing" | "/services/google-meta-ads" | "/services/search-engine-optimization" | "/services/custom-web-app-development" | "/services/ai-workflow-automation" | "/services/branding-design" | "/services/startup-mentorship" | "/", // For NAVIGATE action
     "data": { // For FILL_FORM action. Populate with details you know from the chat history
       "name": "string",
       "email": "string",
