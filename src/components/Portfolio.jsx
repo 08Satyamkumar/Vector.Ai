@@ -2,30 +2,8 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
-const projects = [
-  {
-    id: 1,
-    title: 'Hoarding Booking App',
-    category: 'Web Application',
-    badge: 'Real-time Inventory',
-    image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 2,
-    title: 'Prescripto',
-    category: 'Healthcare App',
-    badge: '5k+ Bookings',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 3,
-    title: 'QuickBite',
-    category: 'Food Delivery',
-    badge: '30min Delivery',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
-  },
-];
+import config from '../data/companyConfig.json';
+const projects = config.projects.slice(0, 3);
 
 const Portfolio = () => {
   return (

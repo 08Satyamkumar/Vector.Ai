@@ -1139,5 +1139,103 @@
         }
       ]
     }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Hoarding Booking App",
+      "category": "Web Application",
+      "description": "A comprehensive platform for browsing and booking outdoor advertising spaces with map integration.",
+      "badge": "Real-time Inventory",
+      "image": "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 2,
+      "title": "Prescripto",
+      "category": "Healthcare App",
+      "description": "A doctor appointment booking platform with specialty filtering and profile management.",
+      "badge": "5k+ Bookings",
+      "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 3,
+      "title": "QuickBite",
+      "category": "Food Delivery App",
+      "description": "A full-stack food delivery application with cart management and order tracking.",
+      "badge": "30min Delivery",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 4,
+      "title": "Dayal Hospitals",
+      "category": "Healthcare Website",
+      "description": "A modern healthcare portal allowing patients to easily find doctors, book appointments, and access services.",
+      "badge": "Patient Trust",
+      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 5,
+      "title": "Inflate Agency",
+      "category": "Web Design & Development",
+      "description": "A visually immersive digital agency website featuring fluid animations and high-performance React.",
+      "badge": "Site of the Day",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 6,
+      "title": "Forever",
+      "category": "E-commerce Store",
+      "description": "A modern fashion e-commerce store with category filtering and cart functionality.",
+      "badge": "150% Sales Boost",
+      "image": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 7,
+      "title": "TechNova",
+      "category": "Web Development",
+      "description": "A complete overhaul of their corporate website focusing on speed and lead generation.",
+      "badge": "40% Conversion Lift",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 8,
+      "title": "GreenEarth",
+      "category": "Branding Design",
+      "description": "Comprehensive brand identity design including logo, guidelines, and packaging.",
+      "badge": "Brand of the Year",
+      "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 9,
+      "title": "UrbanStyle",
+      "category": "Digital Marketing Campaign",
+      "description": "Instagram and Facebook ad campaigns targeting fashion-forward millennials.",
+      "badge": "300% ROAS",
+      "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 10,
+      "title": "HealthFirst",
+      "category": "SEO Strategy",
+      "description": "Local SEO strategy that dominated search results for healthcare keywords in their region.",
+      "badge": "#1 Rank on Google",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173ff9e9e9c?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 11,
+      "title": "EduLearn",
+      "category": "App Development",
+      "description": "Cross-platform mobile app for online learning with live video capabilities.",
+      "badge": "100K+ Downloads",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": 12,
+      "title": "FoodieExpress",
+      "category": "AI Automation",
+      "description": "Automated order processing and delivery tracking system using AI.",
+      "badge": "60% Ops Cost Reduction",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800"
+    }
   ]
 }
