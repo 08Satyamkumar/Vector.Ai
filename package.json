@@ -8,6 +8,7 @@
     "server": "node server/server.js",
     "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
     "build": "vite build",
+    "build:embeddings": "node server/generateEmbeddings.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },

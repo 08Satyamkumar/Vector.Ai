@@ -1,58 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import config from '../data/companyConfig.json';
 
 const TeamGrid = () => {
-  const team = [
-    {
-      id: 1,
-      name: 'Shivam K@ushik',
-      role: 'FULL STACK DEVELOPER',
-      description: 'Full-stack wizard responsible for the robust and scalable architecture behind our client solutions.',
-      image: '/shivam_kaushik.png',
-    },
-    {
-      id: 2,
-      name: 'Adarsh Bhardwaj',
-      role: 'SENIOR FULL STACK DEVELOPER',
-      description: 'Specialist in MERN stack and cloud architecture. Builds scalable backend systems for high-traffic applications.',
-      image: '/adarsh_bhardwaj.png',
-    },
-    {
-      id: 3,
-      name: 'Shanz Alam',
-      role: 'BACKEND LEAD',
-      description: 'Expert in database optimization and API security. Ensures 99.9% uptime for all client applications.',
-      image: '/shanz_alam.png',
-    },
-    {
-      id: 4,
-      name: 'Priya Singh',
-      role: 'CREATIVE DIRECTOR',
-      description: 'Award-winning designer with an eye for aesthetics. She ensures every pixel serves the brand narrative.',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800',
-    },
-    {
-      id: 5,
-      name: 'Shalu K@ushik',
-      role: 'AI AUTOMATION LEAD',
-      description: 'Expert strategist specializing in custom AI chatbot integration, CRM automation, and high-converting social media marketing automation.',
-      image: '/muskan_kaushik.png',
-    },
-    {
-      id: 6,
-      name: 'Vikram Malhotra',
-      role: 'SEO LEAD',
-      description: 'Master of algorithms. Helping clients rank #1 on Google through white-hat technical and content SEO.',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',
-    },
-    {
-      id: 7,
-      name: 'Neha Kapoor',
-      role: 'CLIENT SUCCESS MANAGER',
-      description: 'Dedicated to client happiness. She ensures smooth communication and timely delivery of all projects.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
-    }
-  ];
+  const team = config.team;
 
   return (
     <section className="w-full bg-[#F8F9FA] py-16 lg:py-24 px-6 lg:px-16">

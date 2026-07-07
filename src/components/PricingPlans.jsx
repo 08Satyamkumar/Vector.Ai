@@ -1,71 +1,10 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import { motion } from 'framer-motion';
+import config from '../data/companyConfig.json';
 
 const PricingPlans = () => {
-  const plans = [
-    {
-      name: 'Startup',
-      description: 'Ideal for beginners',
-      originalPrice: '₹35,000',
-      discount: '45% OFF',
-      price: '₹19,999',
-      features: [
-        { name: 'Social Media Management (2 Platforms)', included: true },
-        { name: 'Basic SEO Setup', included: true },
-        { name: '5 Graphic Designs/mo', included: true },
-        { name: 'Monthly Performance Report', included: true },
-        { name: 'Email Support', included: true },
-        { name: 'Ads Management', included: false },
-        { name: 'AI Automation', included: false },
-        { name: '24/7 Support', included: false },
-      ]
-    },
-    {
-      name: 'Growth',
-      description: 'Everything you need to scale',
-      originalPrice: '₹75,000',
-      discount: '50% OFF',
-      price: '₹39,999',
-      isPopular: true,
-      features: [
-        { name: 'Social Media (4 Platforms)', included: true },
-        { name: 'Advanced SEO & Backlinking', included: true },
-        { name: 'Google & Meta Ads Management', included: true },
-        { name: '10 Graphic Designs + 2 Reels/mo', included: true },
-        { name: 'Bi-Weekly Strategy Calls', included: true },
-        { name: 'AI Chatbot Integration', included: false },
-        { name: 'Custom CRM Setup', included: false },
-      ]
-    },
-    {
-      name: 'Business',
-      description: 'For aggressive expansion',
-      originalPrice: '₹1,20,000',
-      discount: '40% OFF',
-      price: '₹69,999',
-      features: [
-        { name: 'Omnichannel Marketing Strategy', included: true },
-        { name: 'Full AI Automation Suite', included: true },
-        { name: 'Unlimited Graphic Design', included: true },
-        { name: 'Video Editing (4 Reels/mo)', included: true },
-        { name: 'Custom CRM & Lead Scoring', included: true },
-        { name: 'Dedicated Account Manager', included: true },
-      ]
-    },
-    {
-      name: 'Enterprise',
-      description: 'Custom solution for large orgs',
-      price: 'Custom',
-      features: [
-        { name: 'Full Digital Transformation', included: true },
-        { name: 'Custom App/Web Development', included: true },
-        { name: 'Dedicated Dev & Marketing Team', included: true },
-        { name: '24/7 Priority Support', included: true },
-        { name: 'White-label Services', included: true },
-      ]
-    }
-  ];
+  const plans = config.pricing;
 
   return (
     <section className="w-full bg-[#F8F9FA] py-16 lg:py-24 px-6 lg:px-16">
