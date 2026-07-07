@@ -19,10 +19,10 @@ const TeamGrid = () => {
     },
     {
       id: 3,
-      name: 'Rohan Deshmukh',
+      name: 'Shanz Alam',
       role: 'BACKEND LEAD',
       description: 'Expert in database optimization and API security. Ensures 99.9% uptime for all client applications.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800',
+      image: '/shanz_alam.png',
     },
     {
       id: 4,
