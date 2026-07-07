@@ -22,14 +22,14 @@ const Footer = () => {
           {/* Left Column (Logo & CTA) */}
           <div className="lg:col-span-5 flex flex-col">
             {/* Logo */}
-            <div className="flex flex-col mb-8">
-              <a href="/" className="flex items-center gap-[0.5px] font-display">
-                <span className="text-white text-3xl font-black tracking-tighter">Vector</span>
-                <span className="text-[#FF3B30] text-3xl font-black tracking-tighter">.Ai</span>
+            <div className="flex flex-col mb-8 w-fit bg-white/95 px-5 py-2.5 rounded-2xl shadow-sm border border-white/10">
+              <a href="/" className="flex items-center">
+                <img 
+                  src="/logo.png" 
+                  alt="Vector.Ai Logo" 
+                  className="h-10 w-auto object-contain"
+                />
               </a>
-              <span className="text-[#0054D2] text-[10px] font-bold tracking-[0.2em] uppercase pl-1 mt-0.5">
-                IT SOLUTION
-              </span>
             </div>
 
             {/* Heading */}

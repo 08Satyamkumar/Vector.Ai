@@ -60,14 +60,14 @@ const Navbar = () => {
       </button>
 
       {/* Logo */}
-      <div className="flex flex-col items-center lg:items-start absolute left-1/2 -translate-x-1/2 lg:static lg:transform-none">
-        <a href="/" className="flex items-center gap-[0.5px] font-display">
-          <span className="text-brand-dark font-black text-xl md:text-2xl tracking-tight leading-none">Vector</span>
-          <span className="text-brand-red font-black text-xl md:text-2xl tracking-tight leading-none">.Ai</span>
+      <div className="absolute left-1/2 -translate-x-1/2 lg:static lg:transform-none">
+        <a href="/" className="flex items-center">
+          <img 
+            src="/logo.png" 
+            alt="Vector.Ai Logo" 
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </a>
-        <span className="text-brand-lime font-bold text-[7px] md:text-[8px] tracking-[0.2em] mt-1 pl-[1px]">
-          IT SOLUTION
-        </span>
       </div>
 
       {/* Desktop Links */}
