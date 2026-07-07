@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Send, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const ChatWidget = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { role: 'ai', content: 'Hi there! I am Maya, Vector.Ai\'s AI assistant. How can I help you today?' }
@@ -10,6 +12,18 @@ const ChatWidget = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+
+  // Handle navigation events from Maya
+  useEffect(() => {
+    const handleMayaAction = (e) => {
+      const { type, path } = e.detail;
+      if (type === 'NAVIGATE' && path) {
+        navigate(path);
+      }
+    };
+    window.addEventListener('maya-action', handleMayaAction);
+    return () => window.removeEventListener('maya-action', handleMayaAction);
+  }, [navigate]);
 
   const avatarUrl = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=256&q=80";
 
@@ -40,7 +54,19 @@ const ChatWidget = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setMessages(prev => [...prev, { role: 'ai', content: data.reply }]);
+        let replyText = data.reply;
+        let actionObj = data.action;
+
+        if (typeof replyText === 'undefined') {
+          replyText = data.reply || data;
+        }
+
+        setMessages(prev => [...prev, { role: 'ai', content: replyText }]);
+
+        // Dispatch action command to window listeners (Contact Form, Router navigate)
+        if (actionObj) {
+          window.dispatchEvent(new CustomEvent('maya-action', { detail: actionObj }));
+        }
       } else {
         setMessages(prev => [...prev, { role: 'ai', content: 'Sorry, I am having trouble connecting to my brain right now.' }]);
       }

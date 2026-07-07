@@ -14,6 +14,32 @@ const ContactHero = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
+  // Listen to Maya Actions for form auto-filling & submitting
+  useEffect(() => {
+    const handleMayaAction = (e) => {
+      const { type, data } = e.detail;
+      if (type === 'FILL_FORM' && data) {
+        setFormData(prev => ({
+          ...prev,
+          name: data.name !== undefined ? data.name : prev.name,
+          email: data.email !== undefined ? data.email : prev.email,
+          phone: data.phone !== undefined ? data.phone : prev.phone,
+          service: data.service !== undefined ? data.service : prev.service,
+          message: data.message !== undefined ? data.message : prev.message
+        }));
+      } else if (type === 'SUBMIT_FORM') {
+        setTimeout(() => {
+          const form = document.getElementById('contact-form');
+          if (form) {
+            form.requestSubmit();
+          }
+        }, 1500); // 1.5s delay for natural response flow
+      }
+    };
+    window.addEventListener('maya-action', handleMayaAction);
+    return () => window.removeEventListener('maya-action', handleMayaAction);
+  }, []);
+
   // Auto-close modal after 7 seconds
   useEffect(() => {
     let timer;
@@ -176,7 +202,7 @@ const ContactHero = () => {
 
           {/* Right Column - Contact Form */}
           <div className="lg:col-span-7 bg-white rounded-[2.5rem] p-10 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col gap-6">
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
