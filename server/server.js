@@ -143,7 +143,7 @@ ${conversationHistory}
 Maya: `;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-flash-latest',
       contents: prompt,
       config: {
         responseMimeType: 'application/json'
@@ -163,11 +163,7 @@ Maya: `;
     res.json(replyData);
   } catch (error) {
     console.error('Error generating AI response:', error);
-    res.status(500).json({ 
-      error: 'Failed to generate response. Please try again.',
-      details: error.message,
-      stack: error.stack
-    });
+    res.status(500).json({ error: 'Failed to generate response. Please try again.' });
   }
 });
 
