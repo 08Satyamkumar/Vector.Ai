@@ -176,15 +176,15 @@ const ChatWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="w-[320px] sm:w-[360px] h-[520px] bg-white rounded-[28px] shadow-[0_20px_50px_rgba(0,84,210,0.18)] overflow-hidden flex flex-col border border-gray-100"
+            className="w-[320px] sm:w-[360px] h-[520px] bg-[#080D16] rounded-[28px] shadow-[0_20px_50px_rgba(0,84,210,0.22)] overflow-hidden flex flex-col border border-white/10"
           >
             
             {/* Header */}
-            <div className="bg-[#0B0F19] p-4.5 flex items-center justify-between shrink-0 border-b border-white/5 relative overflow-hidden">
+            <div className="bg-[#0B0F19] p-4 flex items-center justify-between shrink-0 border-b border-white/5 relative overflow-hidden">
               {/* Subtle ambient light bar in header */}
-              <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#0054D2] to-[#FF1744]" />
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0054D2] to-[#FF1744]" />
               
-              <div className="flex items-center gap-2.5 z-10">
+              <div className="flex items-center gap-2 z-10">
                 {/* Back button to return to selection screen */}
                 {chatMode !== null && (
                   <button 
@@ -193,23 +193,23 @@ const ChatWidget = () => {
                       setChatMode(null);
                     }}
                     title="Go Back to Menu"
-                    className="mr-0.5 w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 text-white transition-colors"
+                    className="mr-1 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 text-white transition-colors"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5" />
+                    <ArrowLeft className="w-4 h-4" />
                   </button>
                 )}
                 <img 
                   src={avatarUrl} 
                   alt="Maya" 
-                  className="w-9 h-9 rounded-full object-cover border border-white/20 shadow-inner"
+                  className="w-8 h-8 rounded-full object-cover border border-white/20 shadow-inner"
                 />
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-1">
                     <span className="text-white font-extrabold text-[15px] leading-tight tracking-tight">Maya</span>
-                    <span className="bg-[#E8F0FE] text-[#0054D2] text-[8px] font-black px-1.5 py-0.5 rounded-md uppercase tracking-wider">AI</span>
+                    <span className="bg-[#E8F0FE] text-[#0054D2] text-[8px] font-black px-1 py-0.5 rounded-md uppercase tracking-wider">AI</span>
                   </div>
-                  <div className="flex items-center gap-1.5 mt-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E676] animate-pulse"></span>
+                  <div className="flex items-center gap-1 mt-0.5">
+                    <span className="w-1 h-1 rounded-full bg-[#00E676] animate-pulse"></span>
                     <span className="text-gray-300 text-[11px] font-medium">Online</span>
                   </div>
                 </div>
@@ -225,15 +225,15 @@ const ChatWidget = () => {
                     }}
                     disabled={isConnecting}
                     title="Switch to Voice Call"
-                    className={`w-7.5 h-7.5 rounded-full flex items-center justify-center transition-colors bg-white/10 hover:bg-white/20 text-white shadow-sm`}
+                    className="w-8 h-8 rounded-full flex items-center justify-center transition-colors bg-white/10 hover:bg-white/20 text-white shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5 text-white" />
+                    <Phone className="w-4 h-4 text-white" />
                   </button>
                 )}
 
                 <button 
                   onClick={() => setIsOpen(false)}
-                  className="w-7.5 h-7.5 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
                   <ChevronDown className="w-4 h-4 text-white" />
                 </button>
@@ -247,20 +247,20 @@ const ChatWidget = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF1744]/12 rounded-full blur-[45px] pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#0054D2]/22 rounded-full blur-[45px] pointer-events-none" />
 
-                <div className="flex-1 flex flex-col items-center justify-center space-y-6.5 z-10">
+                <div className="flex-1 flex flex-col items-center justify-center space-y-6 z-10">
                   {/* Avatar with pulsing glow */}
                   <div className="relative">
                     <motion.div 
                       animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute -inset-3.5 bg-[#0054D2]/45 rounded-full blur-xl"
+                      className="absolute -inset-3 bg-[#0054D2]/45 rounded-full blur-xl"
                     />
                     <img 
                       src={avatarUrl} 
                       alt="Maya Avatar" 
-                      className="relative w-22 h-22 rounded-full object-cover border-2 border-white/20 shadow-2xl"
+                      className="relative w-20 h-20 rounded-full object-cover border-2 border-white/20 shadow-2xl"
                     />
-                    <span className="absolute bottom-0.5 right-0.5 w-4.5 h-4.5 bg-[#00E676] border-2 border-[#080D16] rounded-full shadow-lg"></span>
+                    <span className="absolute bottom-0.5 right-0.5 w-4 h-4 bg-[#00E676] border-2 border-[#080D16] rounded-full shadow-lg"></span>
                   </div>
                   
                   {/* Greeting */}
@@ -272,18 +272,18 @@ const ChatWidget = () => {
                   </div>
                   
                   {/* Selection Options */}
-                  <div className="w-full space-y-3.5 pt-3">
+                  <div className="w-full space-y-3 pt-3">
                     {/* Option 1: Voice Session (Electric Blue Gradient Card) */}
                     <button
                       onClick={() => {
                         setChatMode('voice');
                         startCall();
                       }}
-                      className="w-full p-4.5 rounded-2xl bg-gradient-to-r from-[#0054D2] via-[#0066FF] to-[#00A2FF] text-left flex items-center justify-between hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_25px_rgba(0,84,210,0.35)] transition-all duration-300 group"
+                      className="w-full p-4 rounded-2xl bg-gradient-to-r from-[#0054D2] via-[#0066FF] to-[#00A2FF] text-left flex items-center justify-between hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_25px_rgba(0,84,210,0.35)] transition-all duration-300 group"
                     >
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-10.5 h-10.5 rounded-xl bg-white/15 flex items-center justify-center shrink-0 shadow-inner">
-                          <Phone className="w-4.5 h-4.5 text-white animate-pulse" />
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0 shadow-inner">
+                          <Phone className="w-4 h-4 text-white animate-pulse" />
                         </div>
                         <div>
                           <h4 className="font-extrabold text-sm text-white tracking-tight">Voice Session (Call)</h4>
@@ -296,10 +296,10 @@ const ChatWidget = () => {
                     {/* Option 2: Chit-Chat Text (Frosted White Border Card with Red highlight on hover) */}
                     <button
                       onClick={() => setChatMode('text')}
-                      className="w-full p-4.5 rounded-2xl bg-white/5 border border-white/10 text-left flex items-center justify-between hover:bg-white/10 hover:border-[#FF1744]/25 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_25px_rgba(255,23,68,0.1)] transition-all duration-300 group"
+                      className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-left flex items-center justify-between hover:bg-white/10 hover:border-[#FF1744]/25 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_25px_rgba(255,23,68,0.1)] transition-all duration-300 group"
                     >
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-10.5 h-10.5 rounded-xl bg-white/10 flex items-center justify-center shrink-0 shadow-inner">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 shadow-inner">
                           <Send className="w-4 h-4 text-white" />
                         </div>
                         <div>
@@ -326,12 +326,12 @@ const ChatWidget = () => {
                   <motion.div 
                     animate={{ scale: [1, 1.25, 1], opacity: [0.3, 0.6, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -inset-4.5 bg-[#0054D2]/45 rounded-full blur-xl"
+                    className="absolute -inset-4 bg-[#0054D2]/45 rounded-full blur-xl"
                   />
                   <img 
                     src={avatarUrl} 
                     alt="Maya Voice Agent" 
-                    className="relative w-24 h-24 rounded-full object-cover border-2 border-[#0054D2] shadow-2xl z-10"
+                    className="relative w-20 h-20 rounded-full object-cover border-2 border-[#0054D2] shadow-2xl z-10"
                   />
                 </div>
                 <div className="space-y-2 z-10">
@@ -347,7 +347,7 @@ const ChatWidget = () => {
                 
                 {/* Voice Wave Animation with Alternating Red & Blue Bars (Brand colors!) */}
                 {!isConnecting && (
-                  <div className="flex items-center gap-1.5 h-8 z-10">
+                  <div className="flex items-center gap-1 h-8 z-10">
                     {[...Array(6)].map((_, i) => (
                       <motion.span
                         key={i}
@@ -358,7 +358,7 @@ const ChatWidget = () => {
                           delay: i * 0.1,
                           ease: "easeInOut"
                         }}
-                        className={`w-1.5 rounded-full ${i % 2 === 0 ? 'bg-[#00A2FF]' : 'bg-[#FF1744]'}`}
+                        className={`w-1 rounded-full ${i % 2 === 0 ? 'bg-[#00A2FF]' : 'bg-[#FF1744]'}`}
                       />
                     ))}
                   </div>
@@ -415,12 +415,12 @@ const ChatWidget = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Type your message..." 
-                    className="w-full bg-[#F8F9FA] border border-gray-200 text-[#0B0F19] text-[14px] rounded-full pl-5 pr-12.5 py-3.5 focus:outline-none focus:border-[#0054D2] transition-colors font-medium"
+                    className="w-full bg-[#F8F9FA] border border-gray-200 text-[#0B0F19] text-[14px] rounded-full pl-5 pr-12 py-3.5 focus:outline-none focus:border-[#0054D2] transition-colors font-medium"
                   />
                   <button 
                     type="submit"
                     disabled={!input.trim() || isLoading}
-                    className="absolute right-1.5 w-10.5 h-10.5 bg-[#0B0F19] text-white rounded-full flex items-center justify-center hover:bg-gradient-to-r hover:from-[#0054D2] hover:to-[#0084FF] disabled:opacity-50 transition-all duration-300"
+                    className="absolute right-1 w-10 h-10 bg-[#0B0F19] text-white rounded-full flex items-center justify-center hover:bg-gradient-to-r hover:from-[#0054D2] hover:to-[#0084FF] disabled:opacity-50 transition-all duration-300"
                   >
                     <Send className="w-4 h-4 ml-0.5" />
                   </button>
