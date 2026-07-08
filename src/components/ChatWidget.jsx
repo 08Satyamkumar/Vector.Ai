@@ -47,6 +47,33 @@ const ChatWidget = () => {
         setChatMode(null);
         setMessages(prev => [...prev, { role: 'ai', content: '⚠️ Connection error. Please make sure your microphone is connected.' }]);
       });
+
+      // Handle real-time client-side navigation tool calls from Vapi
+      vapiRef.current.on('message', (message) => {
+        if (message.type === 'tool-calls') {
+          const toolCall = message.toolCalls?.[0];
+          if (toolCall && toolCall.function.name === 'navigate') {
+            try {
+              const args = JSON.parse(toolCall.function.arguments);
+              if (args.path) {
+                // Dispatch route change to the frontend navigation system
+                window.dispatchEvent(new CustomEvent('maya-action', {
+                  detail: { type: 'NAVIGATE', path: args.path }
+                }));
+                
+                // Return success output to the voice model
+                vapiRef.current.send({
+                  type: 'tool-output',
+                  toolCallId: toolCall.id,
+                  output: JSON.stringify({ success: true, message: `Successfully navigated to ${args.path}` })
+                });
+              }
+            } catch (err) {
+              console.error('Error executing Vapi client tool:', err);
+            }
+          }
+        }
+      });
     } catch (err) {
       console.error('Failed to initialize Vapi SDK:', err);
     }
