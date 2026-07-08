@@ -23,7 +23,8 @@ const ChatWidget = () => {
   useEffect(() => {
     try {
       // Vapi Public Key: bf915efc-f8e3-4a2a-95c0-73982d4680b1
-      vapiRef.current = new Vapi('bf915efc-f8e3-4a2a-95c0-73982d4680b1');
+      const VapiClass = Vapi.default || Vapi;
+      vapiRef.current = new VapiClass('bf915efc-f8e3-4a2a-95c0-73982d4680b1');
 
       vapiRef.current.on('call-start', () => {
         setIsCallActive(true);
