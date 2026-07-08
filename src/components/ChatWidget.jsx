@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Send, Loader2, Phone, PhoneOff } from 'lucide-react';
+import { ChevronDown, Send, Loader2, Phone, PhoneOff, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Vapi from '@vapi-ai/web';
@@ -7,6 +7,7 @@ import Vapi from '@vapi-ai/web';
 const ChatWidget = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [chatMode, setChatMode] = useState(null); // null = Welcome Screen, 'text' = Text Chat, 'voice' = Voice session
   const [messages, setMessages] = useState([
     { role: 'ai', content: 'Hi there! I am Maya, Vector.Ai\'s AI assistant. How can I help you today?' }
   ]);
@@ -29,13 +30,13 @@ const ChatWidget = () => {
       vapiRef.current.on('call-start', () => {
         setIsCallActive(true);
         setIsConnecting(false);
-        // Append a system message in chat history for transparency
         setMessages(prev => [...prev, { role: 'ai', content: '🎙️ Voice call started. Maya is now speaking with you!' }]);
       });
 
       vapiRef.current.on('call-end', () => {
         setIsCallActive(false);
         setIsConnecting(false);
+        setChatMode(null); // Reset back to welcome screen when call ends
         setMessages(prev => [...prev, { role: 'ai', content: '🔴 Voice call ended. You can continue via text here.' }]);
       });
 
@@ -43,6 +44,7 @@ const ChatWidget = () => {
         console.error('Vapi Connection Error:', err);
         setIsCallActive(false);
         setIsConnecting(false);
+        setChatMode(null);
         setMessages(prev => [...prev, { role: 'ai', content: '⚠️ Connection error. Please make sure your microphone is connected.' }]);
       });
     } catch (err) {
@@ -78,6 +80,7 @@ const ChatWidget = () => {
     }
     setIsCallActive(false);
     setIsConnecting(false);
+    setChatMode(null);
   };
 
   // Handle navigation events from Maya
@@ -92,7 +95,8 @@ const ChatWidget = () => {
     return () => window.removeEventListener('maya-action', handleMayaAction);
   }, [navigate]);
 
-  const avatarUrl = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=256&q=80";
+  // Premium, High-Resolution smiling corporate Indian headshot
+  const avatarUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=256&q=80";
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -174,47 +178,53 @@ const ChatWidget = () => {
           >
             
             {/* Header */}
-            <div className="bg-[#0B0F19] p-4 flex items-center justify-between shrink-0">
-              <div className="flex items-center gap-3">
+            <div className="bg-[#0B0F19] p-4 flex items-center justify-between shrink-0 border-b border-white/5">
+              <div className="flex items-center gap-2.5">
+                {/* Back button to return to selection screen */}
+                {chatMode !== null && (
+                  <button 
+                    onClick={() => {
+                      endCall();
+                      setChatMode(null);
+                    }}
+                    title="Go Back to Menu"
+                    className="mr-0.5 w-7 h-7 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 text-white transition-colors"
+                  >
+                    <ArrowLeft className="w-3.5 h-3.5" />
+                  </button>
+                )}
                 <img 
                   src={avatarUrl} 
                   alt="Maya" 
                   className="w-10 h-10 rounded-full object-cover border border-white/20"
                 />
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
                     <span className="text-white font-bold text-[15px] leading-tight">Maya</span>
-                    <span className="bg-[#E8F0FE] text-[#0054D2] text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">AI</span>
+                    <span className="bg-[#E8F0FE] text-[#0054D2] text-[8px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider">AI</span>
                   </div>
                   <div className="flex items-center gap-1.5 mt-0.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00E676]"></span>
-                    <span className="text-gray-300 text-[12px] font-medium">Online</span>
+                    <span className="text-gray-300 text-[11px] font-medium">Online</span>
                   </div>
                 </div>
               </div>
               
               <div className="flex items-center gap-2">
-                {/* Voice Call / Phone Toggle Button */}
-                <button
-                  onClick={isCallActive ? endCall : startCall}
-                  disabled={isConnecting}
-                  title={isCallActive ? "End Voice Call" : "Start Voice Call"}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-                    isCallActive
-                      ? 'bg-red-500 hover:bg-red-600 text-white'
-                      : isConnecting
-                        ? 'bg-amber-500 text-white animate-pulse'
-                        : 'bg-white/10 hover:bg-white/20 text-white'
-                  }`}
-                >
-                  {isCallActive ? (
-                    <PhoneOff className="w-4 h-4 text-white" />
-                  ) : isConnecting ? (
-                    <Loader2 className="w-4 h-4 text-white animate-spin" />
-                  ) : (
+                {/* Voice Call / Phone Toggle Button (Only visible in text mode) */}
+                {chatMode === 'text' && (
+                  <button
+                    onClick={() => {
+                      setChatMode('voice');
+                      startCall();
+                    }}
+                    disabled={isConnecting}
+                    title="Switch to Voice Call"
+                    className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors bg-white/10 hover:bg-white/20 text-white`}
+                  >
                     <Phone className="w-4 h-4 text-white" />
-                  )}
-                </button>
+                  </button>
+                )}
 
                 <button 
                   onClick={() => setIsOpen(false)}
@@ -225,10 +235,87 @@ const ChatWidget = () => {
               </div>
             </div>
 
-            {/* Chat / Voice Area */}
-            {isCallActive ? (
-              <div className="flex-1 flex flex-col items-center justify-center bg-[#0B0F19] p-6 text-center space-y-6">
-                <div className="relative">
+            {/* Chat / Voice / Welcome Area */}
+            {chatMode === null ? (
+              <div className="flex-1 flex flex-col justify-between p-6 bg-[#0B0F19] text-center text-white relative">
+                {/* Tech background design element */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#1d293d,transparent)] opacity-40 pointer-events-none" />
+
+                <div className="flex-1 flex flex-col items-center justify-center space-y-6 z-10">
+                  {/* Avatar */}
+                  <div className="relative">
+                    <motion.div 
+                      animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.4, 0.2] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -inset-3 bg-[#0054D2]/40 rounded-full blur-lg"
+                    />
+                    <img 
+                      src={avatarUrl} 
+                      alt="Maya Avatar" 
+                      className="relative w-20 h-20 rounded-full object-cover border-2 border-white/20 shadow-2xl"
+                    />
+                    <span className="absolute bottom-0.5 right-0.5 w-4 h-4 bg-[#00E676] border-2 border-[#0B0F19] rounded-full"></span>
+                  </div>
+                  
+                  {/* Greeting */}
+                  <div className="space-y-1.5">
+                    <h3 className="text-white font-extrabold text-xl tracking-tight leading-none">Meet Maya</h3>
+                    <p className="text-gray-300 text-xs px-2 leading-relaxed">
+                      Vector.Ai's smart representative. Please select a mode to connect:
+                    </p>
+                  </div>
+                  
+                  {/* Selection Options */}
+                  <div className="w-full space-y-3 pt-3">
+                    {/* Option 1: Voice Session */}
+                    <button
+                      onClick={() => {
+                        setChatMode('voice');
+                        startCall();
+                      }}
+                      className="w-full p-4 rounded-2xl bg-gradient-to-r from-[#0054D2] to-[#0084FF] text-left flex items-center justify-between hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-[#0054D2]/25 group"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                          <Phone className="w-4.5 h-4.5 text-white animate-pulse" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-sm text-white">Voice Session (Call)</h4>
+                          <p className="text-white/70 text-[10px] mt-0.5">Bol kar Maya se direct baat kijiye</p>
+                        </div>
+                      </div>
+                      <span className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center text-white font-bold text-[10px] tracking-wide">GO</span>
+                    </button>
+                    
+                    {/* Option 2: Chit-Chat Text */}
+                    <button
+                      onClick={() => setChatMode('text')}
+                      className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-left flex items-center justify-between hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] transition-all group"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                          <Send className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-sm text-white">Chit-Chat (Text)</h4>
+                          <p className="text-gray-400 text-[10px] mt-0.5">Type karke chat ke zariye baat kijiye</p>
+                        </div>
+                      </div>
+                      <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white font-bold text-[10px] tracking-wide">GO</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="text-gray-500 text-[9px] font-bold tracking-widest select-none pt-4 z-10">
+                  POWERED BY VECTOR.AI IT SOLUTION
+                </div>
+              </div>
+            ) : chatMode === 'voice' || isCallActive ? (
+              /* Voice Calling Screen */
+              <div className="flex-1 flex flex-col items-center justify-center bg-[#0B0F19] p-6 text-center space-y-6 relative">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#1d293d,transparent)] opacity-40 pointer-events-none" />
+
+                <div className="relative z-10">
                   <motion.div 
                     animate={{ scale: [1, 1.25, 1], opacity: [0.3, 0.6, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -240,31 +327,45 @@ const ChatWidget = () => {
                     className="relative w-24 h-24 rounded-full object-cover border-2 border-[#0054D2] shadow-2xl z-10"
                   />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-white font-bold text-lg">Maya is Listening...</h3>
-                  <p className="text-gray-400 text-xs px-4">Start speaking naturally. Maya will answer in real-time. You can interrupt her at any time!</p>
+                <div className="space-y-2 z-10">
+                  <h3 className="text-white font-bold text-lg">
+                    {isConnecting ? "Connecting Call..." : "Maya is Listening..."}
+                  </h3>
+                  <p className="text-gray-400 text-xs px-4 leading-relaxed">
+                    {isConnecting 
+                      ? "Please wait, launching real-time speech channel." 
+                      : "Start speaking naturally. Maya will answer. You can interrupt her anytime!"}
+                  </p>
                 </div>
                 
                 {/* Voice Wave Animation */}
-                <div className="flex items-center gap-1.5 h-8">
-                  {[...Array(5)].map((_, i) => (
-                    <motion.span
-                      key={i}
-                      animate={{ height: [8, 32, 8] }}
-                      transition={{ 
-                        duration: 0.6, 
-                        repeat: Infinity, 
-                        delay: i * 0.12,
-                        ease: "easeInOut"
-                      }}
-                      className="w-1.5 bg-[#00E676] rounded-full"
-                    />
-                  ))}
-                </div>
+                {!isConnecting && (
+                  <div className="flex items-center gap-1.5 h-8 z-10">
+                    {[...Array(5)].map((_, i) => (
+                      <motion.span
+                        key={i}
+                        animate={{ height: [8, 32, 8] }}
+                        transition={{ 
+                          duration: 0.6, 
+                          repeat: Infinity, 
+                          delay: i * 0.12,
+                          ease: "easeInOut"
+                        }}
+                        className="w-1.5 bg-[#00E676] rounded-full"
+                      />
+                    ))}
+                  </div>
+                )}
+
+                {isConnecting && (
+                  <div className="flex items-center justify-center h-8 z-10">
+                    <Loader2 className="w-6 h-6 text-[#0054D2] animate-spin" />
+                  </div>
+                )}
                 
                 <button 
                   onClick={endCall}
-                  className="px-6 py-2.5 bg-red-500 hover:bg-red-600 text-white rounded-full font-bold text-sm transition-colors shadow-lg shadow-red-500/25"
+                  className="px-6 py-2.5 bg-red-500 hover:bg-red-600 text-white rounded-full font-bold text-sm transition-colors shadow-lg shadow-red-500/25 z-10"
                 >
                   End Voice Session
                 </button>
@@ -298,8 +399,8 @@ const ChatWidget = () => {
               </div>
             )}
 
-            {/* Input Area (Only visible when call is not active) */}
-            {!isCallActive && (
+            {/* Input Area (Only visible when text chat mode is active) */}
+            {chatMode === 'text' && (
               <div className="p-4 bg-white border-t border-gray-100 shrink-0">
                 <form onSubmit={handleSend} className="relative flex items-center">
                   <input 
