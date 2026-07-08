@@ -21,32 +21,40 @@ const ChatWidget = () => {
 
   // Initialize Vapi SDK
   useEffect(() => {
-    // Vapi Public Key: bf915efc-f8e3-4a2a-95c0-73982d4680b1
-    vapiRef.current = new Vapi('bf915efc-f8e3-4a2a-95c0-73982d4680b1');
+    try {
+      // Vapi Public Key: bf915efc-f8e3-4a2a-95c0-73982d4680b1
+      vapiRef.current = new Vapi('bf915efc-f8e3-4a2a-95c0-73982d4680b1');
 
-    vapiRef.current.on('call-start', () => {
-      setIsCallActive(true);
-      setIsConnecting(false);
-      // Append a system message in chat history for transparency
-      setMessages(prev => [...prev, { role: 'ai', content: '🎙️ Voice call started. Maya is now speaking with you!' }]);
-    });
+      vapiRef.current.on('call-start', () => {
+        setIsCallActive(true);
+        setIsConnecting(false);
+        // Append a system message in chat history for transparency
+        setMessages(prev => [...prev, { role: 'ai', content: '🎙️ Voice call started. Maya is now speaking with you!' }]);
+      });
 
-    vapiRef.current.on('call-end', () => {
-      setIsCallActive(false);
-      setIsConnecting(false);
-      setMessages(prev => [...prev, { role: 'ai', content: '🔴 Voice call ended. You can continue via text here.' }]);
-    });
+      vapiRef.current.on('call-end', () => {
+        setIsCallActive(false);
+        setIsConnecting(false);
+        setMessages(prev => [...prev, { role: 'ai', content: '🔴 Voice call ended. You can continue via text here.' }]);
+      });
 
-    vapiRef.current.on('error', (err) => {
-      console.error('Vapi Connection Error:', err);
-      setIsCallActive(false);
-      setIsConnecting(false);
-      setMessages(prev => [...prev, { role: 'ai', content: '⚠️ Connection error. Please make sure your microphone is connected.' }]);
-    });
+      vapiRef.current.on('error', (err) => {
+        console.error('Vapi Connection Error:', err);
+        setIsCallActive(false);
+        setIsConnecting(false);
+        setMessages(prev => [...prev, { role: 'ai', content: '⚠️ Connection error. Please make sure your microphone is connected.' }]);
+      });
+    } catch (err) {
+      console.error('Failed to initialize Vapi SDK:', err);
+    }
 
     return () => {
       if (vapiRef.current) {
-        vapiRef.current.stop();
+        try {
+          vapiRef.current.stop();
+        } catch (stopErr) {
+          // Ignore stop errors on unmount
+        }
       }
     };
   }, []);
