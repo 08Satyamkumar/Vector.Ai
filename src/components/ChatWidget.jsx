@@ -53,19 +53,37 @@ const ChatWidget = () => {
         if (message.type === 'tool-calls') {
           const toolCall = message.toolCalls?.[0];
           if (toolCall && toolCall.function.name === 'navigate') {
-            try {
               const args = JSON.parse(toolCall.function.arguments);
-              if (args.path) {
+              let targetPath = args.path ? args.path.toLowerCase().trim() : '';
+              
+              // Normalize route strings to match App.jsx paths exactly
+              if (targetPath.includes('contact')) {
+                targetPath = '/contact';
+              } else if (targetPath.includes('pricing') || targetPath.includes('price')) {
+                targetPath = '/pricing';
+              } else if (targetPath.includes('service')) {
+                targetPath = '/services';
+              } else if (targetPath.includes('project') || targetPath.includes('portfolio') || targetPath.includes('work')) {
+                targetPath = '/project';
+              } else if (targetPath.includes('team') || targetPath.includes('about')) {
+                targetPath = '/team';
+              } else if (targetPath.includes('blog') || targetPath.includes('news')) {
+                targetPath = '/blog';
+              } else if (targetPath.includes('home') || targetPath.includes('index') || targetPath === '/' || targetPath === '') {
+                targetPath = '/';
+              }
+              
+              if (targetPath) {
                 // Dispatch route change to the frontend navigation system
                 window.dispatchEvent(new CustomEvent('maya-action', {
-                  detail: { type: 'NAVIGATE', path: args.path }
+                  detail: { type: 'NAVIGATE', path: targetPath }
                 }));
                 
                 // Return success output to the voice model
                 vapiRef.current.send({
                   type: 'tool-output',
                   toolCallId: toolCall.id,
-                  output: JSON.stringify({ success: true, message: `Successfully navigated to ${args.path}` })
+                  output: JSON.stringify({ success: true, message: `Successfully navigated to ${targetPath}` })
                 });
               }
             } catch (err) {
