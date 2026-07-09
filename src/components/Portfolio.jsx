@@ -55,10 +55,15 @@ const Portfolio = () => {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* Badge */}
-              <div className="absolute top-4 right-4">
+              <div className="absolute top-4 right-4 flex flex-col items-end gap-2">
                 <span className="bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full text-[11px] font-bold text-gray-800 shadow-sm">
                   {project.badge}
                 </span>
+                {!project.link && (
+                  <span className="bg-[#FAF6EE]/95 border border-[#E2D2B4] backdrop-blur-sm px-3 py-1 rounded-full text-[9px] font-black text-[#D4A373] shadow-sm uppercase tracking-wider">
+                    Coming Soon ⏳
+                  </span>
+                )}
               </div>
             </div>
 

@@ -1142,6 +1142,33 @@
   ],
   "projects": [
     {
+      "id": 3,
+      "title": "Samrat Super Market",
+      "category": "Mega Delivery Ecosystem",
+      "description": "A multi-platform 5-story app ecosystem: 1st floor food delivery, 2nd floor online clothing, 3rd floor health care, 4th floor asset management, and 5th floor Uber/Ola cab services.",
+      "badge": "5 Platforms",
+      "image": "/samrat_super_market.png",
+      "link": "https://samrat-super-market.vercel.app/"
+    },
+    {
+      "id": 9,
+      "title": "Vastu Home Decor",
+      "category": "E-Commerce & Interior Design",
+      "description": "A premium Vastu-compliant wallcoverings and home decoration e-commerce platform featuring immersive visual displays.",
+      "badge": "Luxury Design",
+      "image": "/vastu_home_decor.png",
+      "link": "https://vastu-wallcoverings-web.vercel.app/"
+    },
+    {
+      "id": 5,
+      "title": "Think Your College",
+      "category": "Educational Counseling",
+      "description": "A comprehensive educational counseling and college recommendation portal helping students discover their ideal academic paths.",
+      "badge": "10k+ Admissions",
+      "image": "/think_your_college.png",
+      "link": "https://thinkyourcollege.vercel.app/"
+    },
+    {
       "id": 1,
       "title": "Hoarding Booking App",
       "category": "Web Application",
@@ -1158,30 +1185,12 @@
       "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800"
     },
     {
-      "id": 3,
-      "title": "Samrat Super Market",
-      "category": "5-in-1 Mega App",
-      "description": "A multi-platform 5-story ecosystem: 1st floor food delivery, 2nd floor online clothing, 3rd floor health care, 4th floor asset management, and 5th floor Uber/Ola cab services.",
-      "badge": "5 Platforms",
-      "image": "/samrat_super_market.png",
-      "link": "https://samrat-super-market.vercel.app/"
-    },
-    {
       "id": 4,
       "title": "Dayal Hospitals",
       "category": "Healthcare Website",
       "description": "A modern healthcare portal allowing patients to easily find doctors, book appointments, and access services.",
       "badge": "Patient Trust",
       "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      "id": 5,
-      "title": "Think Your College",
-      "category": "Educational Portal",
-      "description": "A comprehensive educational counseling and college recommendation portal helping students discover their ideal academic paths.",
-      "badge": "10k+ Admissions",
-      "image": "/think_your_college.png",
-      "link": "https://thinkyourcollege.vercel.app/"
     },
     {
       "id": 6,
@@ -1206,15 +1215,6 @@
       "description": "Comprehensive brand identity design including logo, guidelines, and packaging.",
       "badge": "Brand of the Year",
       "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      "id": 9,
-      "title": "Vastu Home Decor",
-      "category": "Interior Wallcoverings",
-      "description": "A premium Vastu-compliant wallcoverings and home decoration e-commerce platform featuring immersive visual displays.",
-      "badge": "Luxury Design",
-      "image": "/vastu_home_decor.png",
-      "link": "https://vastu-wallcoverings-web.vercel.app/"
     },
     {
       "id": 10,

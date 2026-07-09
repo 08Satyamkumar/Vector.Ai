@@ -57,9 +57,16 @@ const ProjectGrid = () => {
                 {project.description}
               </p>
 
-              {/* Green Badge */}
-              <div className="inline-flex items-center bg-[#E5F5E9] text-[#00A136] text-[11px] font-bold px-3 py-1.5 rounded uppercase tracking-wider">
-                {project.badge}
+              {/* Green Badge / Status */}
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="inline-flex items-center bg-[#E5F5E9] text-[#00A136] text-[11px] font-bold px-3 py-1.5 rounded uppercase tracking-wider">
+                  {project.badge}
+                </div>
+                {!project.link && (
+                  <span className="bg-amber-50 text-amber-600 border border-amber-200/50 text-[10px] font-black px-2.5 py-1 rounded uppercase tracking-wider">
+                    Coming Soon ⏳
+                  </span>
+                )}
               </div>
 
             </a>
