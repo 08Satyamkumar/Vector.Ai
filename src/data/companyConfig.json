@@ -1159,11 +1159,11 @@
     },
     {
       "id": 3,
-      "title": "samrat-super-market",
-      "category": "Supermarket App",
-      "description": "A premium full-stack online supermarket web application with cart management and order tracking.",
-      "badge": "Fresh Delivery",
-      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800",
+      "title": "Samrat Super Market",
+      "category": "5-in-1 Mega App",
+      "description": "A multi-platform 5-story ecosystem: 1st floor food delivery, 2nd floor online clothing, 3rd floor health care, 4th floor asset management, and 5th floor Uber/Ola cab services.",
+      "badge": "5 Platforms",
+      "image": "/samrat_super_market.png",
       "link": "https://samrat-super-market.vercel.app/"
     },
     {
