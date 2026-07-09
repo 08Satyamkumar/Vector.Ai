@@ -162,7 +162,7 @@ const ChatWidget = () => {
   }, [navigate]);
 
   // Premium, High-Resolution smiling corporate Indian headshot
-  const avatarUrl = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=256&q=80";
+  const avatarUrl = "/maya_avatar.png";
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
