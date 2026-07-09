@@ -3,17 +3,35 @@ import { ArrowRight, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import config from '../data/companyConfig.json';
 
-const BlogList = () => {
+const BlogList = ({ searchQuery, activeCategory }) => {
   const posts = config.blogs || [];
-  const featuredPost = posts[0];
-  const gridPosts = posts.slice(1);
+
+  // Filter posts based on category and search query
+  const filteredPosts = posts.filter((post) => {
+    const matchesCategory = activeCategory === 'All' || post.category.toLowerCase() === activeCategory.toLowerCase();
+    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          post.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const hasFilters = activeCategory !== 'All' || searchQuery.trim() !== '';
+  const featuredPost = !hasFilters ? filteredPosts[0] : null;
+  const gridPosts = !hasFilters ? filteredPosts.slice(1) : filteredPosts;
 
   return (
     <section className="w-full bg-[#F8F9FA] px-6 lg:px-16 pb-24">
       <div className="max-w-[88rem] mx-auto">
         
-        {/* Featured Post */}
-        {featuredPost && (
+        {/* Empty State */}
+        {filteredPosts.length === 0 && (
+          <div className="w-full text-center py-20 bg-white rounded-[2.5rem] border border-[#E5DFD5] shadow-sm">
+            <h3 className="text-2xl font-display font-bold text-[#0B0F19] mb-2">No Articles Found</h3>
+            <p className="text-gray-500">We couldn't find any articles matching your search filters.</p>
+          </div>
+        )}
+
+        {/* Featured Post Banner */}
+        {!hasFilters && featuredPost && (
           <Link 
             to={`/blog/${featuredPost.slug}`}
             className="relative w-full min-h-[400px] md:min-h-[500px] rounded-[2.5rem] overflow-hidden flex flex-col justify-end p-8 md:p-12 group mb-12 cursor-pointer block"
@@ -58,49 +76,51 @@ const BlogList = () => {
         )}
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {gridPosts.map((post) => (
-            <Link 
-              key={post.id} 
-              to={`/blog/${post.slug}`} 
-              className="bg-white rounded-3xl p-5 shadow-sm hover:shadow-md transition-shadow group cursor-pointer flex flex-col h-full no-underline"
-            >
-              {/* Image container */}
-              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-5">
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#0B0F19] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
-                  {post.category}
+        {gridPosts.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {gridPosts.map((post) => (
+              <Link 
+                key={post.id} 
+                to={`/blog/${post.slug}`} 
+                className="bg-white rounded-3xl p-5 shadow-sm hover:shadow-md transition-shadow group cursor-pointer flex flex-col h-full no-underline"
+              >
+                {/* Image container */}
+                <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden mb-5">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#0B0F19] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                    {post.category}
+                  </div>
                 </div>
-              </div>
 
-              {/* Meta */}
-              <div className="flex items-center text-gray-400 text-[12px] font-medium gap-1 mb-3">
-                <Clock className="w-3.5 h-3.5" />
-                {post.date}
-              </div>
+                {/* Meta */}
+                <div className="flex items-center text-gray-400 text-[12px] font-medium gap-1 mb-3">
+                  <Clock className="w-3.5 h-3.5" />
+                  {post.date}
+                </div>
 
-              {/* Content */}
-              <h3 className="text-[18px] md:text-[20px] font-bold text-[#0B0F19] mb-3 leading-tight group-hover:text-[#0054D2] transition-colors">
-                {post.title}
-              </h3>
-              <p className="text-gray-500 text-[14px] leading-relaxed mb-6 line-clamp-2">
-                {post.description}
-              </p>
+                {/* Content */}
+                <h3 className="text-[18px] md:text-[20px] font-bold text-[#0B0F19] mb-3 leading-tight group-hover:text-[#0054D2] transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-gray-500 text-[14px] leading-relaxed mb-6 line-clamp-2">
+                  {post.description}
+                </p>
 
-              {/* Link */}
-              <div className="mt-auto pt-4 border-t border-gray-100">
-                <span className="inline-flex items-center gap-2 text-[#0B0F19] font-bold text-[13px] hover:text-[#0054D2] transition-colors group/link">
-                  Read More
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
+                {/* Link */}
+                <div className="mt-auto pt-4 border-t border-gray-100">
+                  <span className="inline-flex items-center gap-2 text-[#0B0F19] font-bold text-[13px] hover:text-[#0054D2] transition-colors group/link">
+                    Read More
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
 
       </div>
     </section>

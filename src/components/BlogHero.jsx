@@ -1,7 +1,7 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 
-const BlogHero = () => {
+const BlogHero = ({ searchQuery, onSearchChange, activeCategory, onCategoryChange }) => {
   const categories = ['All', 'AI Trends', 'SEO', 'Web Development', 'Marketing', 'Content Strategy', 'Branding'];
 
   return (
@@ -29,6 +29,8 @@ const BlogHero = () => {
         </div>
         <input
           type="text"
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
           className="w-full pl-14 pr-6 py-4 rounded-full border-none focus:outline-none focus:ring-2 focus:ring-brand-blue/20 bg-white text-[15px] text-gray-700 placeholder-gray-400 shadow-sm"
           placeholder="Search articles, guides..."
         />
@@ -36,11 +38,12 @@ const BlogHero = () => {
 
       {/* Categories */}
       <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
-        {categories.map((category, index) => (
+        {categories.map((category) => (
           <button
             key={category}
+            onClick={() => onCategoryChange(category)}
             className={`px-6 py-2.5 rounded-full text-[14px] font-bold transition-all shadow-sm
-              ${index === 0 
+              ${activeCategory === category 
                 ? 'bg-[#0B0F19] text-white hover:bg-black' 
                 : 'bg-white text-[#0B0F19] hover:bg-gray-50'
               }
