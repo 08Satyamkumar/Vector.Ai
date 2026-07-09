@@ -1176,11 +1176,12 @@
     },
     {
       "id": 5,
-      "title": "Inflate Agency",
-      "category": "Web Design & Development",
-      "description": "A visually immersive digital agency website featuring fluid animations and high-performance React.",
-      "badge": "Site of the Day",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+      "title": "Think Your College",
+      "category": "Educational Portal",
+      "description": "A comprehensive educational counseling and college recommendation portal helping students discover their ideal academic paths.",
+      "badge": "10k+ Admissions",
+      "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
+      "link": "https://thinkyourcollege.vercel.app/"
     },
     {
       "id": 6,
