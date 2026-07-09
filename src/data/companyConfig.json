@@ -1713,5 +1713,6 @@
         }
       ]
     }
-  ]
+  ],
+  "newsletterFormEndpoint": "https://formspree.io/f/YOUR_ID_HERE"
 }
