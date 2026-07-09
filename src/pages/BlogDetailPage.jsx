@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, BookOpen } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, BookOpen, Languages } from 'lucide-react';
 import config from '../data/companyConfig.json';
 import NewsletterCTA from '../components/NewsletterCTA';
 
 const BlogDetailPage = () => {
   const { slug } = useParams();
   const blog = (config.blogs || []).find((b) => b.slug === slug);
+  const [lang, setLang] = useState('en'); // 'en' or 'hi' (Hinglish)
 
   if (!blog) {
     return (
@@ -21,6 +22,7 @@ const BlogDetailPage = () => {
   }
 
   const isAncient = blog.isAncientTheme;
+  const hasTranslation = blog.content.some(b => b.textHinglish);
 
   return (
     <article 
@@ -82,7 +84,7 @@ const BlogDetailPage = () => {
               }
             `}
           >
-            {blog.title}
+            {lang === 'hi' && blog.titleHinglish ? blog.titleHinglish : blog.title}
           </h1>
 
           {/* Author & Meta */}
@@ -138,6 +140,40 @@ const BlogDetailPage = () => {
 
       {/* Content Body */}
       <div className="max-w-[48rem] mx-auto px-6 lg:px-16">
+        
+        {/* Language Selection Pill Toggle */}
+        {hasTranslation && (
+          <div className="flex justify-end items-center gap-3 mb-10 pb-4 border-b border-gray-100 font-sans">
+            <span className="text-xs text-gray-400 font-bold flex items-center gap-1">
+              <Languages className="w-3.5 h-3.5" /> READ IN:
+            </span>
+            <div className="flex bg-[#E2D2B4]/25 p-1 rounded-full border border-[#E2D2B4]/40">
+              <button 
+                onClick={() => setLang('en')} 
+                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all
+                  ${lang === 'en' 
+                    ? 'bg-[#E36947] text-white shadow-sm' 
+                    : 'text-[#6B5A4E] hover:text-[#E36947]'
+                  }
+                `}
+              >
+                English
+              </button>
+              <button 
+                onClick={() => setLang('hi')} 
+                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all
+                  ${lang === 'hi' 
+                    ? 'bg-[#E36947] text-white shadow-sm' 
+                    : 'text-[#6B5A4E] hover:text-[#E36947]'
+                  }
+                `}
+              >
+                Hinglish
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Ancient-looking decorative divider */}
         {isAncient && (
           <div className="flex items-center justify-center gap-4 mb-12">
@@ -156,6 +192,7 @@ const BlogDetailPage = () => {
           `}
         >
           {blog.content.map((block, idx) => {
+            const blockText = (lang === 'hi' && block.textHinglish) ? block.textHinglish : block.text;
             if (block.type === 'heading') {
               return (
                 <h2 
@@ -168,7 +205,7 @@ const BlogDetailPage = () => {
                   `}
                 >
                   {isAncient && <span className="text-[#E36947]">◆</span>}
-                  {block.text}
+                  {blockText}
                 </h2>
               );
             }
@@ -179,7 +216,7 @@ const BlogDetailPage = () => {
                   ${isAncient ? 'font-serif text-justify text-[#4A3B32]' : 'text-gray-700'}
                 `}
               >
-                {block.text}
+                {blockText}
               </p>
             );
           })}
