@@ -25,6 +25,8 @@ const BlogDetailPage = () => {
   const hasMultipleLanguages = !!blog.languages;
   const content = hasMultipleLanguages ? (blog.languages[lang] || []) : (blog.content || []);
 
+  let hasSeenParagraph = false;
+
   return (
     <article 
       className={`w-full min-h-screen pb-24 transition-colors duration-500
@@ -185,14 +187,7 @@ const BlogDetailPage = () => {
           </div>
         )}
 
-        <div 
-          className={`space-y-8 text-[18px] leading-relaxed font-serif
-            ${isAncient 
-              ? 'text-[#4A3B32] first-letter:text-5xl first-letter:font-bold first-letter:text-[#E36947] first-letter:mr-3 first-letter:float-left first-letter:font-serif' 
-              : 'text-gray-700 font-sans'
-            }
-          `}
-        >
+        <div className="space-y-8 text-[18px] leading-relaxed">
           {content.map((block, idx) => {
             if (block.type === 'heading') {
               return (
@@ -210,16 +205,53 @@ const BlogDetailPage = () => {
                 </h2>
               );
             }
-            return (
-              <p 
-                key={idx} 
-                className={`leading-relaxed mb-6
-                  ${isAncient ? 'font-serif text-justify text-[#4A3B32]' : 'text-gray-700'}
-                `}
-              >
-                {block.text}
-              </p>
-            );
+
+            if (block.type === 'shloka') {
+              return (
+                <div 
+                  key={idx} 
+                  className={`my-12 p-8 rounded-3xl border text-center transition-all duration-300 shadow-sm hover:shadow-md
+                    ${isAncient 
+                      ? 'bg-[#F2E8D0]/50 border-[#E2D2B4] text-[#3E2F26]' 
+                      : 'bg-gray-50 border-gray-100 text-gray-800 font-sans'
+                    }
+                  `}
+                >
+                  {/* Sanskrit text */}
+                  <p className="text-xl md:text-2xl font-bold leading-loose tracking-wide whitespace-pre-line mb-6 font-serif italic text-[#E36947]">
+                    {block.sanskrit}
+                  </p>
+                  
+                  {/* Decorative divider inside shloka */}
+                  <div className="w-16 h-[1px] bg-[#E2D2B4] mx-auto mb-4"></div>
+                  
+                  {/* Translation */}
+                  <p className="text-sm md:text-[15px] leading-relaxed text-gray-500 italic max-w-xl mx-auto font-sans">
+                    {block.translation}
+                  </p>
+                </div>
+              );
+            }
+
+            if (block.type === 'paragraph') {
+              const isFirstParagraph = !hasSeenParagraph;
+              hasSeenParagraph = true;
+              return (
+                <p 
+                  key={idx} 
+                  className={`leading-relaxed mb-6 text-justify
+                    ${isAncient 
+                      ? `font-serif text-[#4A3B32] ${isFirstParagraph ? 'first-letter:text-5xl first-letter:font-bold first-letter:text-[#E36947] first-letter:mr-3 first-letter:float-left first-letter:font-serif' : ''}` 
+                      : 'text-gray-700 font-sans'
+                    }
+                  `}
+                >
+                  {block.text}
+                </p>
+              );
+            }
+
+            return null;
           })}
         </div>
 
