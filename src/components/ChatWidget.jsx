@@ -53,6 +53,7 @@ const ChatWidget = () => {
         if (message.type === 'tool-calls') {
           const toolCall = message.toolCalls?.[0];
           if (toolCall && toolCall.function.name === 'navigate') {
+            try {
               const args = JSON.parse(toolCall.function.arguments);
               let targetPath = args.path ? args.path.toLowerCase().trim() : '';
               
