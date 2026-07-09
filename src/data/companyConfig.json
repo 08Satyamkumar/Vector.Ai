@@ -1250,7 +1250,7 @@
       "readTime": "6 min read",
       "title": "The Future of AI in Digital Marketing",
       "description": "How artificial intelligence is reshaping the way brands interact with customers and optimize campaigns.",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2400",
+      "image": "/blog_ai_marketing.png",
       "author": {
         "name": "Satyam Samrat Singh",
         "role": "CEO & Founder",
@@ -1295,7 +1295,7 @@
       "readTime": "7 min read",
       "title": "Top 5 SEO Strategies for 2026",
       "description": "Stay ahead of algorithm updates with these proven search engine optimization techniques.",
-      "image": "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?auto=format&fit=crop&q=80&w=800",
+      "image": "/blog_seo_strategies.png",
       "author": {
         "name": "Shivam Kaushik",
         "role": "Lead Architect",
@@ -1340,7 +1340,7 @@
       "readTime": "5 min read",
       "title": "Why Your Website Needs to be Fast",
       "description": "Page speed is a critical ranking factor. Learn how to optimize your site for lightning-fast performance.",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      "image": "/blog_website_speed.png",
       "author": {
         "name": "Adarsh Bhardwaj",
         "role": "Frontend Specialist",
@@ -1377,7 +1377,7 @@
       "readTime": "6 min read",
       "title": "Mastering Google Ads: A Beginner's Guide",
       "description": "A comprehensive guide to setting up and managing profitable Google Ad campaigns.",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      "image": "/blog_google_ads.png",
       "author": {
         "name": "Shanz Alam",
         "role": "Marketing Director",
@@ -1414,7 +1414,7 @@
       "readTime": "6 min read",
       "title": "The Power of Video Marketing in 2026",
       "description": "Video content is king. Discover how to create engaging videos that drive conversions.",
-      "image": "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&q=80&w=800",
+      "image": "/blog_video_marketing.png",
       "author": {
         "name": "Muskan Shrivas",
         "role": "Social Media Lead",
@@ -1451,7 +1451,7 @@
       "readTime": "5 min read",
       "title": "Building a Brand Identity that Lasts",
       "description": "Your brand is more than just a logo. Learn the secrets of building a strong, memorable brand.",
-      "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800",
+      "image": "/blog_brand_identity.png",
       "author": {
         "name": "Shivam Kumar",
         "role": "Creative Director",
