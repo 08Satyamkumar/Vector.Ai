@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, CheckCircle, Loader2 } from 'lucide-react';
-import config from '../data/companyConfig.json';
 
 const NewsletterCTA = () => {
   const [email, setEmail] = useState('');
@@ -12,37 +11,32 @@ const NewsletterCTA = () => {
 
     setStatus('loading');
 
-    // Formspree / Web3Forms endpoint config.
-    // Falls back to a mock handler if the user has not configured their form ID yet.
-    const formEndpoint = config.newsletterFormEndpoint || '';
-
-    if (!formEndpoint || formEndpoint.includes('YOUR_ID_HERE')) {
-      // Mock successful subscription behavior for instant testing
-      setTimeout(() => {
-        setStatus('success');
-      }, 1500);
-      return;
-    }
-
     try {
-      const response = await fetch(formEndpoint, {
+      // Submitting to the Web3Forms endpoint using the same access key as the contact form
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
+          access_key: "d316d7e7-6a74-486d-a7f6-f87fed68732d",
+          subject: "New Newsletter Subscription - Scaller.in",
+          from_name: "Scaller.in Newsletter",
           email: email,
-          subject: 'New Newsletter Subscription - Scaller.in'
+          message: `Congratulations! A new user has subscribed to the Scaller.in newsletter. Email: ${email}`
         }),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setStatus('success');
       } else {
         setStatus('error');
       }
     } catch (error) {
+      console.error("Newsletter submission error:", error);
       setStatus('error');
     }
   };
