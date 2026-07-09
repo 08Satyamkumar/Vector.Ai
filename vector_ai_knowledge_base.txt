@@ -1,0 +1,63 @@
+=========================================
+VECTOR.AI - CORPORATE KNOWLEDGE BASE & FAQ
+=========================================
+
+1. COMPANY PROFILE & CONTACT INFO
+----------------------------------
+- Company Name: Vector.Ai
+- Mission: Helping businesses automate manual operations, generate premium leads, scale sales, and eliminate tech bloat. "Built on Values."
+- Founder & CEO: Satyam Samrat Singh (also known as Samrat Ji). If a customer asks who built Maya, she replies: "Mujhe hamare CEO, Samrat Ji ne design kiya hai!"
+- Contact Email: vector.ai09@gmail.com
+- Contact Numbers: +91 9217571488, +91 9122135215
+- Physical Office Address: Gaur Yamuna City, Greater Noida, Uttar Pradesh, India
+- Website: https://vector-ai-solution.vercel.app/
+
+2. CORE SERVICES & OFFERINGS
+-----------------------------
+A. AI & Workflow Automation:
+   - Description: Custom AI chatbot integrations, automated customer support agents, invoice automation, and data sync setups. Saves up to 80% of manual working hours.
+   - Key Inclusions: 24/7 client response bots, CRM database sync, WhatsApp API integrations.
+
+B. Custom Web & App Development:
+   - Description: Premium, fast, responsive web portals, custom admin panels, mobile-optimized sites, and E-Commerce platforms built on React, Node.js, and modern tech stacks.
+   - Timelines: Standard setups take 7-14 days to deploy.
+
+C. Google & Meta Ads Management:
+   - Description: High-ROI paid advertising campaigns on Google Search, YouTube, Facebook, and Instagram to capture ready-to-buy customers.
+   - Strategy: Focused on revenue conversion, not vanity clicks.
+
+D. IT Strategy & Tech Consulting:
+   - Description: Technical stack audits, cloud migration roadmaps, and cutting software redundancies to save businesses thousands in license fees.
+
+E. Startup Mentorship:
+   - Description: Business model planning, pitch deck reviews, go-to-market planning, and investor matchmaking.
+
+3. PRICING PACKAGES
+-------------------
+A. Startup Plan:
+   - Price: ₹19,999/month (Original: ₹35,000 | 45% Discount)
+   - Ideal For: Early stage startups and local businesses looking to establish a digital footprint.
+   - Inclusions: Social Media Management (2 platforms), Basic SEO Setup, 5 graphic designs/month, performance report, email support. (AI Automation and Ads are not included).
+
+B. Growth Plan:
+   - Price: ₹39,999/month (Original: ₹75,000 | 50% Discount)
+   - Ideal For: Growing businesses ready to capture leads and aggressively scale sales.
+   - Inclusions: Social Media Management (4 platforms), Advanced SEO & Backlinking, Google & Meta Ads Management, 10 Graphic Designs + 2 Reels/month, Bi-weekly strategy calls. (AI Automation is not included).
+
+C. Business Plan:
+   - Price: ₹69,999/month (Original: ₹1,25,000 | 45% Discount)
+   - Ideal For: Large scale businesses looking for maximum market dominance and custom AI features.
+   - Inclusions: Omnichannel Social Media Management, Full AI & Workflow Automation Suite, Unlimited Graphic Design & Copy, 4 Reels/month, Custom CRM Setup & Lead Scoring, Dedicated Client Success Manager, 24/7 priority support.
+
+4. CLIENT TRUST & CASE STUDIES
+------------------------------
+- Revenue Generated: Vector.Ai has generated over $50M in cumulative revenue for its clients.
+- E-Commerce Case Study: Boosted sales for a fashion e-commerce brand 'Forever' by 150% in 90 days.
+- Team Strength: Expert full-stack developers (Shivam Kaushik, Adarsh Bhardwaj), backend leads (Shanz Alam), creative designers (Priya Singh), and AI specialists (Shalu Kaushik).
+
+5. CONVERSATION CLOSING FLOW
+----------------------------
+- The core target of Maya is to qualify the customer's requirement and book a 1-on-1 strategy call with Samrat Ji.
+- Maya offers: "Main aapke business ke liye ek customized growth roadmap design karke email/WhatsApp par send karwa deti hoon. Aur aapka direct Zoom call book karwa deti hoon CEO Samrat Ji ke sath."
+- Leads are saved directly into the Google Sheets database using the `saveLead` custom tool.
+=========================================
