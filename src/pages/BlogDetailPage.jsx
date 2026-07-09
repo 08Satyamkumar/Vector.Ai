@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, BookOpen, Languages } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, BookOpen } from 'lucide-react';
 import config from '../data/companyConfig.json';
 import NewsletterCTA from '../components/NewsletterCTA';
 
 const BlogDetailPage = () => {
   const { slug } = useParams();
   const blog = (config.blogs || []).find((b) => b.slug === slug);
-  const [lang, setLang] = useState('en'); // 'en' or 'hi' (Hinglish)
+  const [lang, setLang] = useState('en');
 
   if (!blog) {
     return (
@@ -22,7 +22,8 @@ const BlogDetailPage = () => {
   }
 
   const isAncient = blog.isAncientTheme;
-  const hasTranslation = blog.content.some(b => b.textHinglish);
+  const hasMultipleLanguages = !!blog.languages;
+  const content = hasMultipleLanguages ? (blog.languages[lang] || []) : (blog.content || []);
 
   return (
     <article 
@@ -56,17 +57,52 @@ const BlogDetailPage = () => {
             <ArrowLeft className="w-4 h-4" /> Back to all articles
           </Link>
 
-          {/* Category */}
-          <span 
-            className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider mb-6 inline-block shadow-sm
-              ${isAncient 
-                ? 'bg-[#E36947]/10 text-[#E36947] border border-[#E36947]/20 font-sans' 
-                : 'bg-[#E8F0FE] text-[#0054D2]'
-              }
-            `}
-          >
-            {blog.category}
-          </span>
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+            {/* Category */}
+            <span 
+              className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider inline-block shadow-sm
+                ${isAncient 
+                  ? 'bg-[#E36947]/10 text-[#E36947] border border-[#E36947]/20 font-sans' 
+                  : 'bg-[#E8F0FE] text-[#0054D2]'
+                }
+              `}
+            >
+              {blog.category}
+            </span>
+
+            {/* Language Toggle */}
+            {hasMultipleLanguages && (
+              <div className="flex items-center gap-2 font-sans">
+                <span className={`text-xs font-bold ${isAncient ? 'text-[#6B5A4E]' : 'text-gray-500'}`}>
+                  Read in:
+                </span>
+                <div className={`inline-flex rounded-full p-0.5 border ${isAncient ? 'bg-[#FAF6EE] border-[#E2D2B4]' : 'bg-white border-gray-200'}`}>
+                  <button
+                    onClick={() => setLang('en')}
+                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all
+                      ${lang === 'en'
+                        ? (isAncient ? 'bg-[#E36947] text-white shadow-sm' : 'bg-[#0B0F19] text-white shadow-sm')
+                        : (isAncient ? 'text-[#6B5A4E] hover:text-[#3E2F26]' : 'text-gray-500 hover:text-gray-900')
+                      }
+                    `}
+                  >
+                    English 🇬🇧
+                  </button>
+                  <button
+                    onClick={() => setLang('hinglish')}
+                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all
+                      ${lang === 'hinglish'
+                        ? (isAncient ? 'bg-[#E36947] text-white shadow-sm' : 'bg-[#0B0F19] text-white shadow-sm')
+                        : (isAncient ? 'text-[#6B5A4E] hover:text-[#3E2F26]' : 'text-gray-500 hover:text-gray-900')
+                      }
+                    `}
+                  >
+                    Hinglish 🇮🇳
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Ancient Theme Indicator Banner */}
           {isAncient && (
@@ -84,7 +120,7 @@ const BlogDetailPage = () => {
               }
             `}
           >
-            {lang === 'hi' && blog.titleHinglish ? blog.titleHinglish : blog.title}
+            {blog.title}
           </h1>
 
           {/* Author & Meta */}
@@ -140,40 +176,6 @@ const BlogDetailPage = () => {
 
       {/* Content Body */}
       <div className="max-w-[48rem] mx-auto px-6 lg:px-16">
-        
-        {/* Language Selection Pill Toggle */}
-        {hasTranslation && (
-          <div className="flex justify-end items-center gap-3 mb-10 pb-4 border-b border-gray-100 font-sans">
-            <span className="text-xs text-gray-400 font-bold flex items-center gap-1">
-              <Languages className="w-3.5 h-3.5" /> READ IN:
-            </span>
-            <div className="flex bg-[#E2D2B4]/25 p-1 rounded-full border border-[#E2D2B4]/40">
-              <button 
-                onClick={() => setLang('en')} 
-                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all
-                  ${lang === 'en' 
-                    ? 'bg-[#E36947] text-white shadow-sm' 
-                    : 'text-[#6B5A4E] hover:text-[#E36947]'
-                  }
-                `}
-              >
-                English
-              </button>
-              <button 
-                onClick={() => setLang('hi')} 
-                className={`px-4 py-1.5 rounded-full text-xs font-black transition-all
-                  ${lang === 'hi' 
-                    ? 'bg-[#E36947] text-white shadow-sm' 
-                    : 'text-[#6B5A4E] hover:text-[#E36947]'
-                  }
-                `}
-              >
-                Hinglish
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* Ancient-looking decorative divider */}
         {isAncient && (
           <div className="flex items-center justify-center gap-4 mb-12">
@@ -191,8 +193,7 @@ const BlogDetailPage = () => {
             }
           `}
         >
-          {blog.content.map((block, idx) => {
-            const blockText = (lang === 'hi' && block.textHinglish) ? block.textHinglish : block.text;
+          {content.map((block, idx) => {
             if (block.type === 'heading') {
               return (
                 <h2 
@@ -205,7 +206,7 @@ const BlogDetailPage = () => {
                   `}
                 >
                   {isAncient && <span className="text-[#E36947]">◆</span>}
-                  {blockText}
+                  {block.text}
                 </h2>
               );
             }
@@ -216,7 +217,7 @@ const BlogDetailPage = () => {
                   ${isAncient ? 'font-serif text-justify text-[#4A3B32]' : 'text-gray-700'}
                 `}
               >
-                {blockText}
+                {block.text}
               </p>
             );
           })}
