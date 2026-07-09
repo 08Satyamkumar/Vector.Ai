@@ -36,9 +36,12 @@ const Portfolio = () => {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <motion.div 
+          <motion.a 
             key={project.id} 
-            className="group cursor-pointer flex flex-col h-full"
+            href={project.link || "#case-study"}
+            target={project.link ? "_blank" : "_self"}
+            rel="noopener noreferrer"
+            className="group cursor-pointer flex flex-col h-full no-underline"
             initial={{ y: 60, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -69,7 +72,7 @@ const Portfolio = () => {
                 <p className="text-gray-500 text-sm">{project.category}</p>
               </div>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
       </div>

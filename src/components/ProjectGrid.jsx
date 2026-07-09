@@ -22,7 +22,13 @@ const ProjectGrid = () => {
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
-            <a key={index} href="#case-study" className="group block cursor-pointer">
+            <a 
+              key={index} 
+              href={project.link || "#case-study"} 
+              target={project.link ? "_blank" : "_self"} 
+              rel="noopener noreferrer" 
+              className="group block cursor-pointer"
+            >
               
               {/* Image Container */}
               <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden mb-6 bg-gray-200">
