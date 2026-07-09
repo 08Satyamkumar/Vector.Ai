@@ -10,6 +10,7 @@ import PricingPage from './pages/PricingPage';
 import TeamPage from './pages/TeamPage';
 import ProjectPage from './pages/ProjectPage';
 import BlogPage from './pages/BlogPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
@@ -32,6 +33,7 @@ function App() {
             <Route path="/team" element={<PageTransition><TeamPage /></PageTransition>} />
             <Route path="/project" element={<PageTransition><ProjectPage /></PageTransition>} />
             <Route path="/blog" element={<PageTransition><BlogPage /></PageTransition>} />
+            <Route path="/blog/:slug" element={<PageTransition><BlogDetailPage /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
             <Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
             <Route path="/terms-of-service" element={<PageTransition><TermsOfService /></PageTransition>} />

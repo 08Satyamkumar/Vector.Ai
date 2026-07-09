@@ -1240,5 +1240,102 @@
       "badge": "60% Ops Cost Reduction",
       "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800"
     }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "slug": "future-of-ai-marketing",
+      "category": "AI Trends",
+      "date": "Oct 12, 2026",
+      "readTime": "5 min read",
+      "title": "The Future of AI in Digital Marketing",
+      "description": "How artificial intelligence is reshaping the way brands interact with customers and optimize campaigns.",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=2400",
+      "author": {
+        "name": "Satyam Samrat Singh",
+        "role": "CEO & Founder",
+        "avatar": "/satyam_ceo.png"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Artificial Intelligence is no longer a futuristic concept—it is actively transforming the landscape of digital marketing today. From predictive analytics to conversational commerce, AI-driven automation is helping brands streamline operations and scale customer acquisition faster than ever before."
+        },
+        {
+          "type": "heading",
+          "text": "1. Hyper-Personalization at Scale"
+        },
+        {
+          "type": "paragraph",
+          "text": "Using advanced machine learning, businesses can now segment audiences dynamically and deliver tailored messages in real-time. Whether it is custom WhatsApp product suggestions or dynamic ad creatives, personalization dramatically increases conversation rates and builds deeper user trust."
+        },
+        {
+          "type": "heading",
+          "text": "2. Conversational AI & Web Widgets"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chatbots and voice assistants like Maya represent the next wave of lead qualification. Instead of filling out rigid, boring contact forms, customers can now simply state their needs, ask questions, and book consultation calls directly through interactive speech channels."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "top-seo-strategies-2026",
+      "category": "SEO",
+      "date": "Sep 28, 2026",
+      "readTime": "4 min read",
+      "title": "Top 5 SEO Strategies for 2026",
+      "description": "Stay ahead of algorithm updates with these proven search engine optimization techniques.",
+      "image": "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?auto=format&fit=crop&q=80&w=800",
+      "author": {
+        "name": "Shivam Kaushik",
+        "role": "Lead Architect",
+        "avatar": "/shivam_kaushik.png"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Search engine algorithms are evolving at an unprecedented pace. In 2026, keyword stuffing is completely dead, and user search intent coupled with technical speed is the new baseline for ranking high on Google."
+        },
+        {
+          "type": "heading",
+          "text": "Focus on Core Web Vitals"
+        },
+        {
+          "type": "paragraph",
+          "text": "Google rewards websites that load instantly and provide smooth layout stability. Enhancing server response times, minimizing large style payloads, and lazy loading off-screen media assets are non-negotiable SEO protocols."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "why-website-speed-matters",
+      "category": "Web Development",
+      "date": "Sep 15, 2026",
+      "readTime": "3 min read",
+      "title": "Why Your Website Needs to be Fast",
+      "description": "Page speed is a critical ranking factor. Learn how to optimize your site for lightning-fast performance.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+      "author": {
+        "name": "Adarsh Bhardwaj",
+        "role": "Frontend Specialist",
+        "avatar": "/adarsh_bhardwaj.png"
+      },
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "A 1-second delay in page load time can result in a 7% drop in conversions. In modern web development, speed is directly linked to business revenue."
+        },
+        {
+          "type": "heading",
+          "text": "Optimization Strategies"
+        },
+        {
+          "type": "paragraph",
+          "text": "To keep load times sub-second, developers must bundle code efficiently, prioritize critical CSS, use modern image formats like WebP, and utilize content delivery networks (CDNs) to cache resources globally."
+        }
+      ]
+    }
   ]
 }
