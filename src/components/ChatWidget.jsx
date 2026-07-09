@@ -203,11 +203,11 @@ const ChatWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="w-[320px] sm:w-[360px] h-[520px] bg-[#080D16] rounded-[28px] shadow-[0_20px_50px_rgba(0,84,210,0.22)] overflow-hidden flex flex-col border border-white/10"
+            className="w-[320px] sm:w-[360px] h-[520px] bg-[#FAF8F5] rounded-[28px] shadow-[0_20px_50px_rgba(202,191,173,0.32)] overflow-hidden flex flex-col border border-[#E5DFD5]"
           >
             
             {/* Header */}
-            <div className="bg-[#0B0F19] p-4 flex items-center justify-between shrink-0 border-b border-white/5 relative overflow-hidden">
+            <div className="bg-[#FFFFFF] p-4 flex items-center justify-between shrink-0 border-b border-[#E5DFD5] relative overflow-hidden">
               {/* Subtle ambient light bar in header */}
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0054D2] to-[#FF1744]" />
               
@@ -220,7 +220,7 @@ const ChatWidget = () => {
                       setChatMode(null);
                     }}
                     title="Go Back to Menu"
-                    className="mr-1 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 text-white transition-colors"
+                    className="mr-1 w-8 h-8 rounded-full bg-[#F5F2EB] flex items-center justify-center hover:bg-[#EAE5DC] text-gray-800 transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4" />
                   </button>
@@ -228,16 +228,16 @@ const ChatWidget = () => {
                 <img 
                   src={avatarUrl} 
                   alt="Maya" 
-                  className="w-8 h-8 rounded-full object-cover border border-white/20 shadow-inner"
+                  className="w-8 h-8 rounded-full object-cover border border-[#E5DFD5] shadow-inner"
                 />
                 <div className="flex flex-col">
                   <div className="flex items-center gap-1">
-                    <span className="text-white font-extrabold text-[15px] leading-tight tracking-tight">Maya</span>
+                    <span className="text-[#2C2720] font-extrabold text-[15px] leading-tight tracking-tight">Maya</span>
                     <span className="bg-[#E8F0FE] text-[#0054D2] text-[8px] font-black px-1 py-0.5 rounded-md uppercase tracking-wider">AI</span>
                   </div>
                   <div className="flex items-center gap-1 mt-0.5">
                     <span className="w-1 h-1 rounded-full bg-[#00E676] animate-pulse"></span>
-                    <span className="text-gray-300 text-[11px] font-medium">Online</span>
+                    <span className="text-gray-500 text-[11px] font-medium">Online</span>
                   </div>
                 </div>
               </div>
@@ -252,27 +252,27 @@ const ChatWidget = () => {
                     }}
                     disabled={isConnecting}
                     title="Switch to Voice Call"
-                    className="w-8 h-8 rounded-full flex items-center justify-center transition-colors bg-white/10 hover:bg-white/20 text-white shadow-sm"
+                    className="w-8 h-8 rounded-full flex items-center justify-center transition-colors bg-[#F5F2EB] hover:bg-[#EAE5DC] text-gray-800 shadow-sm"
                   >
-                    <Phone className="w-4 h-4 text-white" />
+                    <Phone className="w-4 h-4 text-gray-800" />
                   </button>
                 )}
 
                 <button 
                   onClick={() => setIsOpen(false)}
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="w-8 h-8 rounded-full bg-[#F5F2EB] flex items-center justify-center hover:bg-[#EAE5DC] text-gray-800 transition-colors"
                 >
-                  <ChevronDown className="w-4 h-4 text-white" />
+                  <ChevronDown className="w-4 h-4 text-gray-800" />
                 </button>
               </div>
             </div>
 
             {/* Chat / Voice / Welcome Area */}
             {chatMode === null ? (
-              <div className="flex-1 flex flex-col justify-between p-6 bg-[#080D16] text-center text-white relative overflow-hidden">
-                {/* Dynamic Ambient Blur Glows (Red and Blue brand colors!) */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF1744]/12 rounded-full blur-[45px] pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#0054D2]/22 rounded-full blur-[45px] pointer-events-none" />
+              <div className="flex-1 flex flex-col justify-between p-6 bg-[#FAF8F5] text-center text-[#2C2720] relative overflow-hidden">
+                {/* Dynamic Ambient Blur Glows (Softened for cream layout) */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF1744]/6 rounded-full blur-[45px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#0054D2]/10 rounded-full blur-[45px] pointer-events-none" />
 
                 <div className="flex-1 flex flex-col items-center justify-center space-y-6 z-10">
                   {/* Avatar with pulsing glow */}
@@ -280,20 +280,20 @@ const ChatWidget = () => {
                     <motion.div 
                       animate={{ scale: [1, 1.15, 1], opacity: [0.3, 0.5, 0.3] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute -inset-3 bg-[#0054D2]/45 rounded-full blur-xl"
+                      className="absolute -inset-3 bg-[#0054D2]/15 rounded-full blur-xl"
                     />
                     <img 
                       src={avatarUrl} 
                       alt="Maya Avatar" 
-                      className="relative w-20 h-20 rounded-full object-cover border-2 border-white/20 shadow-2xl"
+                      className="relative w-20 h-20 rounded-full object-cover border-2 border-[#E5DFD5] shadow-2xl"
                     />
-                    <span className="absolute bottom-0.5 right-0.5 w-4 h-4 bg-[#00E676] border-2 border-[#080D16] rounded-full shadow-lg"></span>
+                    <span className="absolute bottom-0.5 right-0.5 w-4 h-4 bg-[#00E676] border-2 border-[#FAF8F5] rounded-full shadow-lg"></span>
                   </div>
                   
                   {/* Greeting */}
                   <div className="space-y-2">
-                    <h3 className="text-white font-black text-2xl tracking-tight leading-none bg-clip-text bg-gradient-to-b from-white to-gray-200">Meet Maya</h3>
-                    <p className="text-gray-300 text-xs px-2 leading-relaxed font-medium">
+                    <h3 className="text-[#2C2720] font-black text-2xl tracking-tight leading-none">Meet Maya</h3>
+                    <p className="text-gray-600 text-xs px-2 leading-relaxed font-medium">
                       Vector.Ai's smart representative. Select a mode to start conversation:
                     </p>
                   </div>
@@ -320,40 +320,40 @@ const ChatWidget = () => {
                       <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-white font-extrabold text-[10px] tracking-wide shadow-sm group-hover:bg-white/30 transition-colors">GO</span>
                     </button>
                     
-                    {/* Option 2: Chit-Chat Text (Frosted White Border Card with Red highlight on hover) */}
+                    {/* Option 2: Chit-Chat Text (Cream Card with Red highlight on hover) */}
                     <button
                       onClick={() => setChatMode('text')}
-                      className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 text-left flex items-center justify-between hover:bg-white/10 hover:border-[#FF1744]/25 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_25px_rgba(255,23,68,0.1)] transition-all duration-300 group"
+                      className="w-full p-4 rounded-2xl bg-[#FFFFFF] border border-[#E5DFD5] text-left flex items-center justify-between hover:bg-[#F5F2EB] hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_8px_25px_rgba(0,84,210,0.06)] transition-all duration-300 group"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 shadow-inner">
-                          <Send className="w-4 h-4 text-white" />
+                        <div className="w-10 h-10 rounded-xl bg-[#F5F2EB] flex items-center justify-center shrink-0 shadow-inner group-hover:bg-[#EAE5DC]">
+                          <Send className="w-4 h-4 text-gray-700" />
                         </div>
                         <div>
-                          <h4 className="font-extrabold text-sm text-white tracking-tight">Chit-Chat (Text)</h4>
-                          <p className="text-gray-400 text-[10px] mt-0.5 font-medium">Type karke chat ke zariye baat kijiye</p>
+                          <h4 className="font-extrabold text-sm text-[#2C2720] tracking-tight">Chit-Chat (Text)</h4>
+                          <p className="text-gray-500 text-[10px] mt-0.5 font-medium">Type karke chat ke zariye baat kijiye</p>
                         </div>
                       </div>
-                      <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-white font-extrabold text-[10px] tracking-wide shadow-sm group-hover:bg-white/15 transition-colors">GO</span>
+                      <span className="w-6 h-6 rounded-full bg-[#F5F2EB] flex items-center justify-center text-gray-700 font-extrabold text-[10px] tracking-wide shadow-sm group-hover:bg-[#EAE5DC] transition-colors">GO</span>
                     </button>
                   </div>
                 </div>
 
-                <div className="text-gray-600 text-[9px] font-black tracking-widest select-none pt-4 z-10">
+                <div className="text-gray-400 text-[9px] font-black tracking-widest select-none pt-4 z-10">
                   POWERED BY VECTOR.AI IT SOLUTION
                 </div>
               </div>
             ) : chatMode === 'voice' || isCallActive ? (
               /* Voice Calling Screen with Red/Blue glowing overlay */
-              <div className="flex-1 flex flex-col items-center justify-center bg-[#080D16] p-6 text-center space-y-6 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF1744]/12 rounded-full blur-[45px] pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#0054D2]/22 rounded-full blur-[45px] pointer-events-none" />
+              <div className="flex-1 flex flex-col items-center justify-center bg-[#FAF8F5] p-6 text-center space-y-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF1744]/6 rounded-full blur-[45px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#0054D2]/10 rounded-full blur-[45px] pointer-events-none" />
 
                 <div className="relative z-10">
                   <motion.div 
                     animate={{ scale: [1, 1.25, 1], opacity: [0.3, 0.6, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -inset-4 bg-[#0054D2]/45 rounded-full blur-xl"
+                    className="absolute -inset-4 bg-[#0054D2]/15 rounded-full blur-xl"
                   />
                   <img 
                     src={avatarUrl} 
@@ -362,17 +362,17 @@ const ChatWidget = () => {
                   />
                 </div>
                 <div className="space-y-2 z-10">
-                  <h3 className="text-white font-black text-lg tracking-tight">
+                  <h3 className="text-[#2C2720] font-black text-lg tracking-tight">
                     {isConnecting ? "Connecting Call..." : "Maya is Listening..."}
                   </h3>
-                  <p className="text-gray-400 text-xs px-4 leading-relaxed font-medium">
+                  <p className="text-gray-500 text-xs px-4 leading-relaxed font-medium">
                     {isConnecting 
                       ? "Launching secure speech channel. Please wait." 
                       : "Start speaking naturally. Maya will answer. You can interrupt her anytime!"}
                   </p>
                 </div>
                 
-                {/* Voice Wave Animation with Alternating Red & Blue Bars (Brand colors!) */}
+                {/* Voice Wave Animation with Alternating Red & Blue Bars */}
                 {!isConnecting && (
                   <div className="flex items-center gap-1 h-8 z-10">
                     {[...Array(6)].map((_, i) => (
@@ -405,15 +405,15 @@ const ChatWidget = () => {
                 </button>
               </div>
             ) : (
-              /* Standard Chat Area with High-Fidelity message bubbles */
-              <div className="flex-1 overflow-y-auto p-4 bg-[#F8F9FA] space-y-4">
+              /* Standard Chat Area with High-Fidelity message bubbles (in cream palette) */
+              <div className="flex-1 overflow-y-auto p-4 bg-[#F5F2EB] space-y-4">
                 {messages.map((msg, idx) => (
                   <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                     <div 
                       className={`max-w-[80%] p-3 rounded-2xl text-[14px] leading-relaxed font-medium ${
                         msg.role === 'user' 
                           ? 'bg-gradient-to-r from-[#0054D2] to-[#0084FF] text-white rounded-tr-sm shadow-sm' 
-                          : 'bg-white border border-gray-100 shadow-sm text-[#0B0F19] rounded-tl-sm'
+                          : 'bg-white border border-[#E5DFD5] shadow-sm text-gray-900 rounded-tl-sm'
                       }`}
                     >
                       {msg.content}
@@ -423,7 +423,7 @@ const ChatWidget = () => {
                 
                 {isLoading && (
                   <div className="flex justify-start">
-                    <div className="bg-white border border-gray-100 shadow-sm rounded-2xl rounded-tl-sm p-4 flex items-center gap-2">
+                    <div className="bg-white border border-[#E5DFD5] shadow-sm rounded-2xl rounded-tl-sm p-4 flex items-center gap-2">
                       <Loader2 className="w-4 h-4 text-[#0054D2] animate-spin" />
                       <span className="text-[13px] text-gray-500 font-medium">Maya is typing...</span>
                     </div>
@@ -435,14 +435,14 @@ const ChatWidget = () => {
 
             {/* Input Area (Only visible when text chat mode is active) */}
             {chatMode === 'text' && (
-              <div className="p-4 bg-white border-t border-gray-100 shrink-0">
+              <div className="p-4 bg-white border-t border-[#E5DFD5] shrink-0">
                 <form onSubmit={handleSend} className="relative flex items-center">
                   <input 
                     type="text" 
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Type your message..." 
-                    className="w-full bg-[#F8F9FA] border border-gray-200 text-[#0B0F19] text-[14px] rounded-full pl-5 pr-12 py-3.5 focus:outline-none focus:border-[#0054D2] transition-colors font-medium"
+                    className="w-full bg-[#F5F2EC] border border-[#E5DFD5] text-gray-900 text-[14px] rounded-full pl-5 pr-12 py-3.5 focus:outline-none focus:border-[#0054D2] transition-colors font-medium"
                   />
                   <button 
                     type="submit"
@@ -453,7 +453,7 @@ const ChatWidget = () => {
                   </button>
                 </form>
                 <div className="text-center mt-3 text-gray-400 text-[10px] font-bold">
-                  Powered by <span className="text-gray-600 font-black">Vector.Ai IT Solution</span>
+                  Powered by <span className="text-gray-500 font-black">Vector.Ai IT Solution</span>
                 </div>
               </div>
             )}
