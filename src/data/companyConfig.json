@@ -1174,7 +1174,8 @@
       "category": "Real Estate Platform",
       "description": "A premium property listing and virtual touring platform featuring real-time interactive maps, 3D floor plans, and direct broker channels.",
       "badge": "Virtual Touring",
-      "image": "/samrat_estates.png"
+      "image": "/samrat_estates.png",
+      "link": "https://lakhasgroup.vercel.app/"
     },
     {
       "id": 1,
