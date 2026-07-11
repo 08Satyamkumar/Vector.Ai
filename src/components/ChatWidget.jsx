@@ -117,28 +117,8 @@ const ChatWidget = () => {
     setIsConnecting(true);
     try {
       // Vapi Assistant ID: 5de5f832-1fec-42c7-b22d-ebecde275958
-      // Inject client-side tool overrides directly to guarantee instant WebRTC event dispatching
-      await vapiRef.current.start('5de5f832-1fec-42c7-b22d-ebecde275958', {
-        tools: [
-          {
-            type: "function",
-            function: {
-              name: "navigate",
-              description: "Navigate the website to a specific page or section requested by the user.",
-              parameters: {
-                type: "object",
-                properties: {
-                  path: {
-                    type: "string",
-                    description: "The target website path. Options: '/pricing', '/contact', '/services', '/projects', '/team', '/'"
-                  }
-                },
-                required: ["path"]
-              }
-            }
-          }
-        ]
-      });
+      // Start call directly without overrides to prevent validation errors, matching the Vapi Dashboard behavior.
+      await vapiRef.current.start('5de5f832-1fec-42c7-b22d-ebecde275958');
     } catch (err) {
       console.error('Failed to start Vapi voice agent:', err);
       setIsConnecting(false);
