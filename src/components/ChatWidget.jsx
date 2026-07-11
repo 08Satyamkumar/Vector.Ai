@@ -45,7 +45,11 @@ const ChatWidget = () => {
         setIsCallActive(false);
         setIsConnecting(false);
         setChatMode(null);
-        setMessages(prev => [...prev, { role: 'ai', content: '⚠️ Connection error. Please make sure your microphone is connected.' }]);
+        const errMsg = err?.message || (typeof err === 'string' ? err : '') || 'Microphone permission or network blockage';
+        setMessages(prev => [...prev, { 
+          role: 'ai', 
+          content: `⚠️ Vapi Error: ${errMsg}. Please check if your Vapi Public Key, Assistant ID, and microphone permissions are correct.` 
+        }]);
       });
 
       // Handle real-time client-side navigation tool calls from Vapi
