@@ -1229,11 +1229,12 @@
     },
     {
       "id": 10,
-      "title": "HealthFirst",
-      "category": "SEO Strategy",
-      "description": "Local SEO strategy that dominated search results for healthcare keywords in their region.",
-      "badge": "#1 Rank on Google",
-      "image": "https://images.unsplash.com/photo-1576091160550-2173ff9e9e9c?auto=format&fit=crop&q=80&w=800"
+      "title": "LuxeHabitat",
+      "category": "Real Estate Platform",
+      "description": "A high-end, premium real estate platform designed for discovery and acquisition of signature havens, luxury penthouses, and bespoke villa listings.",
+      "badge": "Luxury Living",
+      "image": "/luxehabitat_project.png",
+      "link": "https://realestate-luxehabitat.vercel.app/"
     },
     {
       "id": 11,
