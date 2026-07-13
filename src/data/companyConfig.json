@@ -1205,11 +1205,12 @@
     },
     {
       "id": 6,
-      "title": "Forever",
-      "category": "E-commerce Store",
-      "description": "A modern fashion e-commerce store with category filtering and cart functionality.",
-      "badge": "150% Sales Boost",
-      "image": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80&w=800"
+      "title": "Aetheria Homes",
+      "category": "Real Estate Platform",
+      "description": "A curated digital discovery platform for prestigious estates, luxury penthouses, and bespoke residences designed for extraordinary living.",
+      "badge": "Luxury Real Estate",
+      "image": "/aetheria_project.png",
+      "link": "https://aetheria-homes.vercel.app/"
     },
     {
       "id": 7,
