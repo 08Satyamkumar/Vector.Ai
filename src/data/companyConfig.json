@@ -1245,11 +1245,12 @@
     },
     {
       "id": 12,
-      "title": "FoodieExpress",
-      "category": "AI Automation",
-      "description": "Automated order processing and delivery tracking system using AI.",
-      "badge": "60% Ops Cost Reduction",
-      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800"
+      "title": "Sweet Atelier",
+      "category": "Food & Bakery Website",
+      "description": "A premium artisanal cake & pastry website for ordering handcrafted custom cakes, gourmet desserts, and celebration treats — meticulously prepared with the finest organic ingredients.",
+      "badge": "Artisanal Bakery",
+      "image": "/sweet_atelier_project.png",
+      "link": "https://responsive-cake-website-gamma.vercel.app/"
     }
   ],
   "blogs": [
