@@ -1222,11 +1222,12 @@
     },
     {
       "id": 8,
-      "title": "GreenEarth",
-      "category": "Branding Design",
-      "description": "Comprehensive brand identity design including logo, guidelines, and packaging.",
-      "badge": "Brand of the Year",
-      "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800"
+      "title": "Satyam Portfolio",
+      "category": "Interactive Portfolio",
+      "description": "A premium creative developer portfolio featuring cosmic canvas animations, responsive layout showcases, interactive skill matrix charts, and dark-mode glassmorphic aesthetics.",
+      "badge": "Creative Dev",
+      "image": "/satyam_portfolio_project.png",
+      "link": "https://my-portfolio-iota-brown-54.vercel.app/"
     },
     {
       "id": 10,
