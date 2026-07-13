@@ -1196,11 +1196,12 @@
     },
     {
       "id": 4,
-      "title": "Dayal Hospitals",
-      "category": "Healthcare Website",
-      "description": "A modern healthcare portal allowing patients to easily find doctors, book appointments, and access services.",
-      "badge": "Patient Trust",
-      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800"
+      "title": "AURA BREW",
+      "category": "E-commerce & Brand Website",
+      "description": "An ultra-premium artisanal coffee brand platform featuring a custom flavor finder, digital menu, e-commerce storefront, and interactive storytelling for handpicked single-origin roasts.",
+      "badge": "Artisanal Coffee",
+      "image": "/aurabrew_project.png",
+      "link": "https://aura-brew-coffee.vercel.app/"
     },
     {
       "id": 6,
