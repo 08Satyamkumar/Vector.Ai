@@ -52,11 +52,13 @@ const ChatWidget = () => {
         }]);
       });
 
-      // Handle real-time client-side navigation tool calls from Vapi
+      // Handle real-time client-side tool calls from Vapi (Navigation & Form Submission)
       vapiRef.current.on('message', (message) => {
         if (message.type === 'tool-calls') {
           const toolCall = message.toolCalls?.[0];
-          if (toolCall && toolCall.function.name === 'navigate') {
+          if (!toolCall) return;
+
+          if (toolCall.function.name === 'navigate') {
             try {
               const args = JSON.parse(toolCall.function.arguments);
               let targetPath = args.path ? args.path.toLowerCase().trim() : '';
@@ -92,7 +94,45 @@ const ChatWidget = () => {
                 });
               }
             } catch (err) {
-              console.error('Error executing Vapi client tool:', err);
+              console.error('Error executing Vapi client tool (navigate):', err);
+            }
+          }
+
+          if (toolCall.function.name === 'submitContactForm') {
+            try {
+              const args = JSON.parse(toolCall.function.arguments);
+              const { name, email, phone, message: clientMsg } = args;
+
+              // Direct Web3Forms submission
+              const formData = new FormData();
+              formData.append("access_key", "d316d7e7-6a74-486d-a7f6-f87fed68732d");
+              formData.append("name", name || "Voice Lead");
+              formData.append("email", email || "voice@vectorai.in");
+              formData.append("phone", phone || "");
+              formData.append("message", `[SUBMITTED VIA MAYA VOICE ASSISTANT]\n\nRequirement: ${clientMsg || "Not specified"}`);
+
+              fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log("Voice Lead Form Submission Success:", data);
+                // Dispatch a custom event to notify other UI elements if needed
+                window.dispatchEvent(new CustomEvent('maya-form-submitted', { 
+                  detail: { name, email, phone, message: clientMsg } 
+                }));
+              })
+              .catch(err => console.error("Web3Forms submission failed:", err));
+
+              // Instantly reply to Vapi that the tool execution is successfully started
+              vapiRef.current.send({
+                type: 'tool-output',
+                toolCallId: toolCall.id,
+                output: JSON.stringify({ success: true, message: `Form submitted successfully for ${name}` })
+              });
+            } catch (err) {
+              console.error('Error executing Vapi client tool (submitContactForm):', err);
             }
           }
         }
