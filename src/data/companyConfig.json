@@ -1196,15 +1196,6 @@
       "link": "https://aurahealth-clinic.vercel.app/"
     },
     {
-      "id": 4,
-      "title": "AURA BREW",
-      "category": "E-commerce & Brand Website",
-      "description": "An ultra-premium artisanal coffee brand platform featuring a custom flavor finder, digital menu, e-commerce storefront, and interactive storytelling for handpicked single-origin roasts.",
-      "badge": "Artisanal Coffee",
-      "image": "/aurabrew_project.png",
-      "link": "https://aura-brew-coffee.vercel.app/"
-    },
-    {
       "id": 6,
       "title": "Aetheria Homes",
       "category": "Real Estate Platform",
@@ -1212,15 +1203,6 @@
       "badge": "Luxury Real Estate",
       "image": "/aetheria_project.png",
       "link": "https://aetheria-homes.vercel.app/"
-    },
-    {
-      "id": 7,
-      "title": "JARVIS AI",
-      "category": "AI Web Application",
-      "description": "An advanced next-generation artificial intelligence assistant platform featuring voice synthesis, custom neural widgets, chat playgrounds, and real-time analytical dashboards.",
-      "badge": "Artificial Intelligence",
-      "image": "/jarvis_project.png",
-      "link": "https://jarvis-ai-nine-beta.vercel.app/"
     },
     {
       "id": 8,
