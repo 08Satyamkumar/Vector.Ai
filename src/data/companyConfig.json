@@ -1205,15 +1205,6 @@
       "link": "https://aetheria-homes.vercel.app/"
     },
     {
-      "id": 8,
-      "title": "Satyam Portfolio",
-      "category": "Interactive Portfolio",
-      "description": "A premium creative developer portfolio featuring cosmic canvas animations, responsive layout showcases, interactive skill matrix charts, and dark-mode glassmorphic aesthetics.",
-      "badge": "Creative Dev",
-      "image": "/satyam_portfolio_project.png",
-      "link": "https://my-portfolio-iota-brown-54.vercel.app/"
-    },
-    {
       "id": 10,
       "title": "LuxeHabitat",
       "category": "Real Estate Platform",
