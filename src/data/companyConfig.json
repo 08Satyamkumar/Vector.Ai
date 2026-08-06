@@ -1179,12 +1179,12 @@
     },
     {
       "id": 1,
-      "title": "APEX Fit Lab",
-      "category": "Fitness & Wellness Platform",
-      "description": "An elite athletic fitness platform featuring custom workout methodology explorer, BMI diagnostic calculators, class scheduling, and membership subscription tiers.",
-      "badge": "Athletic Training",
-      "image": "/apex_project.png",
-      "link": "https://apex-fitness-lab.vercel.app/"
+      "title": "Titan Fitness",
+      "category": "Premium Fitness Club",
+      "description": "A high-end, premium fitness club website featuring world-class training programs, dynamic class schedules, BMI calculators, custom nutrition plans, and interactive trainer profiles.",
+      "badge": "Elite Fitness",
+      "image": "/titan_fitness_project.png",
+      "link": "https://gym-website-zeta-ruddy.vercel.app/"
     },
     {
       "id": 2,
