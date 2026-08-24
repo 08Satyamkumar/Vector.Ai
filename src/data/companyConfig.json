@@ -1161,12 +1161,12 @@
     },
     {
       "id": 5,
-      "title": "Think Your College",
+      "title": "College 19",
       "category": "Educational Counseling",
       "description": "A comprehensive educational counseling and college recommendation portal helping students discover their ideal academic paths.",
       "badge": "10k+ Admissions",
       "image": "/think_your_college.png",
-      "link": "https://thinkyourcollege.vercel.app/"
+      "link": "https://think-your-college.vercel.app/"
     },
     {
       "id": 13,
