@@ -33,10 +33,10 @@
     },
     {
       "id": 4,
-      "name": "Priya Singh",
-      "role": "CREATIVE DIRECTOR",
-      "description": "Award-winning designer with an eye for aesthetics. She ensures every pixel serves the brand narrative.",
-      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
+      "name": "Tanushree Pandey",
+      "role": "DATA ANALYTICS & SCIENCE LEAD",
+      "description": "Data science and analytics expert. She specializes in statistical modeling, predictive machine learning, and turning raw datasets into high-performance business intelligence.",
+      "image": "/tanushree_pandey.jpg"
     },
     {
       "id": 5,
