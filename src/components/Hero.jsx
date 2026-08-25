@@ -30,7 +30,7 @@ const Hero = () => {
 
             {/* Description */}
             <p className="text-gray-500 text-[16px] lg:text-[17px] leading-[1.75] max-w-[90%] mb-10">
-              Top-rated Digital Marketing and AI Automation agency. We specialize in SEO, Web Development, and scaling businesses with data-driven strategies.
+              We build intelligent digital products, AI systems, software and automation solutions that help businesses operate smarter, scale faster and create what’s next.
             </p>
 
             {/* Buttons */}
