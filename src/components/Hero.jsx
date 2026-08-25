@@ -24,9 +24,8 @@ const Hero = () => {
 
             {/* Heading */}
             <h1 className="text-[3rem] lg:text-[4rem] xl:text-[4.5rem] font-display font-bold leading-[1.05] text-brand-dark mb-6 tracking-tight">
-              Digital Marketing & <br className="hidden lg:block" />
-              AI Automation <br className="hidden lg:block" />
-              Agency
+              Building Technology <br className="hidden lg:block" />
+              That <span className="bg-gradient-to-r from-[#0054D2] to-[#FF1744] bg-clip-text text-transparent">Moves the World Forward.</span>
             </h1>
 
             {/* Description */}
