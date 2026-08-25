@@ -121,7 +121,8 @@ const Hero = () => {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="w-full h-full rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative border border-gray-200/50 bg-gray-950 group"
-                          <video 
+            >
+              <video 
                 ref={videoRef}
                 src="/hero_video.mp4" 
                 autoPlay 
