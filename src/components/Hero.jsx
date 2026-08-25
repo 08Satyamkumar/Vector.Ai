@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -12,6 +12,33 @@ const Hero = () => {
       setIsMuted(videoRef.current.muted);
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (videoRef.current) {
+          if (entry.isIntersecting) {
+            videoRef.current.play().catch((err) => {
+              // Ignore playback interrupt errors
+            });
+          } else {
+            videoRef.current.pause();
+          }
+        }
+      },
+      { threshold: 0.2 } // Pause when less than 20% of video is visible
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="relative w-full">
