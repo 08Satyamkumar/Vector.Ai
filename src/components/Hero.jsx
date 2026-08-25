@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
+  const ambientVideoRef = useRef(null);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -16,14 +17,13 @@ const Hero = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (videoRef.current) {
-          if (entry.isIntersecting) {
-            videoRef.current.play().catch((err) => {
-              // Ignore playback interrupt errors
-            });
-          } else {
-            videoRef.current.pause();
-          }
+        if (entry.isIntersecting) {
+          const p1 = videoRef.current ? videoRef.current.play() : Promise.resolve();
+          const p2 = ambientVideoRef.current ? ambientVideoRef.current.play() : Promise.resolve();
+          Promise.all([p1, p2]).catch(() => {});
+        } else {
+          if (videoRef.current) videoRef.current.pause();
+          if (ambientVideoRef.current) ambientVideoRef.current.pause();
         }
       },
       { threshold: 0.2 } // Pause when less than 20% of video is visible
@@ -91,7 +91,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Content - Video with 3D Effect */}
+          {/* Right Content - Video with 3D Effect & Ambilight Glow */}
           <motion.div 
             className="relative w-full aspect-[4/3] lg:aspect-[4/3.2]"
             initial={{ x: 80, opacity: 0 }}
@@ -99,6 +99,19 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             style={{ perspective: 1000 }}
           >
+            {/* Real-time Dynamic Ambient Glow (Ambilight) */}
+            <div className="absolute inset-2 rounded-[2.5rem] blur-[50px] opacity-40 pointer-events-none overflow-hidden select-none">
+              <video 
+                ref={ambientVideoRef}
+                src="/hero_video.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover scale-[1.15]"
+              />
+            </div>
+
             <motion.div 
               whileHover={{ 
                 y: -10, 
