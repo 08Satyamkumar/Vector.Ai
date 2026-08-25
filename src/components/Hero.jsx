@@ -15,9 +15,10 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             {/* Pill Badge */}
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-gray border border-gray-100 mb-6">
-              <span className="text-[11px] font-bold text-gray-800 tracking-[0.15em] uppercase">
-                TRUSTED DIGITAL PARTNER
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#0054D2]/10 to-[#FF1744]/10 border border-[#0054D2]/20 mb-6 backdrop-blur-sm shadow-[0_2px_10px_rgba(0,84,210,0.05)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF1744] animate-pulse"></span>
+              <span className="text-[10px] font-bold text-[#0054D2] tracking-[0.2em] uppercase">
+                ENGINEERING THE FUTURE
               </span>
             </div>
 
