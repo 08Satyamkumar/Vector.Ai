@@ -54,19 +54,31 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Content - Image */}
+          {/* Right Content - Video */}
           <motion.div 
             className="relative w-full aspect-[4/3] lg:aspect-[4/3.2]"
             initial={{ x: 80, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           >
-            <div className="w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-gray-200/50 relative">
-              <img 
-                src="/hero-image.png" 
-                alt="Modern Office Interior" 
-                className="w-full h-full object-cover"
+            <div className="w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl shadow-gray-300/50 relative border-4 border-white bg-gray-900 group">
+              <video 
+                src="/hero_video.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
               />
+              {/* Subtle tech gradient overlay to make it look premium */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              {/* Glowing active light indicator in the corner */}
+              <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="text-[9px] font-bold text-white tracking-[0.1em] uppercase">
+                  LIVE STREAM
+                </span>
+              </div>
             </div>
           </motion.div>
         </div>
