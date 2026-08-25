@@ -121,8 +121,7 @@ const Hero = () => {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="w-full h-full rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative border border-gray-200/50 bg-gray-950 group"
-            >
-              <video 
+                          <video 
                 ref={videoRef}
                 src="/hero_video.mp4" 
                 autoPlay 
@@ -134,6 +133,22 @@ const Hero = () => {
               {/* Subtle tech gradient overlay to make it look premium */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
               
+              {/* Futuristic HUD Viewfinder Brackets Overlay */}
+              <div className="absolute inset-4 border border-white/5 pointer-events-none rounded-[1.75rem] transition-all duration-700 group-hover:inset-3 group-hover:border-white/10">
+                {/* Top-Left Bracket */}
+                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-white/40 rounded-tl-sm" />
+                {/* Top-Right Bracket */}
+                <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-white/40 rounded-tr-sm" />
+                {/* Bottom-Left Bracket */}
+                <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-white/40 rounded-bl-sm" />
+                {/* Bottom-Right Bracket */}
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-white/40 rounded-br-sm" />
+                
+                {/* Tiny tech labels on the corners */}
+                <span className="absolute top-1 left-4 text-[7px] font-mono text-white/30 tracking-[0.1em]">SYS.REC // ON</span>
+                <span className="absolute bottom-1 right-4 text-[7px] font-mono text-white/30 tracking-[0.1em]">FOC.AUTO [100%]</span>
+              </div>
+
               {/* Controls Overlay */}
               <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
                 {/* Audio Toggle Button */}
