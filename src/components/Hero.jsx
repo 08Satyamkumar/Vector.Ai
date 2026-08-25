@@ -37,15 +37,19 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link
                 to="/contact"
-                className="px-8 py-3.5 bg-brand-dark text-white rounded-full font-semibold text-[15px] hover:bg-black transition-colors"
+                className="relative group overflow-hidden px-8 py-3.5 bg-[#0B0F19] text-white rounded-full font-semibold text-[15px] shadow-[0_4px_15px_rgba(11,15,25,0.15)] hover:shadow-[0_8px_25px_rgba(0,84,210,0.25)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
               >
-                Start Project
+                {/* Diagonal shiny light reflection that sweeps on hover */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                <span className="relative z-10">Build With Us</span>
               </Link>
               <Link
                 to="/services"
-                className="px-8 py-3.5 bg-white text-brand-dark rounded-full font-semibold text-[15px] hover:bg-gray-50 border border-gray-200 shadow-sm transition-all"
+                className="relative group overflow-hidden px-8 py-3.5 bg-white text-[#0B0F19] rounded-full font-semibold text-[15px] border border-gray-200 shadow-sm hover:shadow-[0_8px_25px_rgba(0,84,210,0.06)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
               >
-                Explore Services
+                {/* Diagonal shiny light reflection that sweeps on hover */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-gray-100 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                <span className="relative z-10">Explore Our Technology</span>
               </Link>
             </div>
           </motion.div>
