@@ -26,7 +26,7 @@ const Footer = () => {
               <a href="/" className="flex items-center">
                 <img 
                   src="/logo.png" 
-                  alt="Vector.Ai Logo" 
+                  alt="Vecttor.world Logo" 
                   className="h-12 w-auto object-contain"
                 />
               </a>
@@ -40,7 +40,7 @@ const Footer = () => {
 
             {/* Paragraph */}
             <p className="text-gray-400 text-[15px] leading-relaxed mb-8 max-w-sm">
-              Join hundreds of businesses that trust Vector.Ai for their digital growth.
+              Join hundreds of businesses that trust Vecttor.world for their digital growth.
             </p>
 
             {/* Buttons */}
@@ -127,7 +127,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-[13px]">
-            © 2026 Vector.Ai. All rights reserved.
+            © 2026 Vecttor.world. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors text-[13px]">Privacy Policy</Link>

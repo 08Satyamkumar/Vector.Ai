@@ -64,7 +64,7 @@ const Navbar = () => {
         <a href="/" className="flex items-center">
           <img 
             src="/logo.png" 
-            alt="Vector.Ai Logo" 
+            alt="Vecttor.world Logo" 
             className="h-12 md:h-16 w-auto object-contain"
           />
         </a>
@@ -128,15 +128,13 @@ const Navbar = () => {
               className="fixed inset-y-0 left-0 w-[80%] max-w-[300px] h-[100dvh] bg-white z-[1000] lg:hidden flex flex-col shadow-2xl"
             >
               <div className="p-6 border-b border-gray-100 flex items-center justify-between">
-                <div className="flex flex-col">
-                  <a href="/" className="flex items-center gap-[0.5px] font-display">
-                    <span className="text-brand-dark font-black text-2xl tracking-tight leading-none">Vector</span>
-                    <span className="text-brand-red font-black text-2xl tracking-tight leading-none">.Ai</span>
-                  </a>
-                  <span className="text-brand-lime font-bold text-[8px] tracking-[0.2em] mt-1 pl-[1px]">
-                    IT SOLUTION
-                  </span>
-                </div>
+                <a href="/" className="flex items-center">
+                  <img 
+                    src="/logo.png" 
+                    alt="Vecttor.world Logo" 
+                    className="h-10 w-auto object-contain"
+                  />
+                </a>
                 <button 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 -mr-2 text-gray-500 hover:text-black hover:bg-gray-100 rounded-full transition-colors"

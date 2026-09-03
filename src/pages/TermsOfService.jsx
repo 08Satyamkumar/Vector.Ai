@@ -60,7 +60,7 @@ const TermsOfService = () => {
             <h2 className="text-[22px] font-bold text-[#0B0F19] mb-4">1. Agreement to Terms</h2>
             <div className="text-gray-600 text-[14px] leading-relaxed space-y-4">
               <p>
-                These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and Vector.Ai (“we,” “us” or “our”), concerning your access to and use of the <strong>https://vector-ai-solution.vercel.app</strong> website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”).
+                These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and Vecttor.world (“we,” “us” or “our”), concerning your access to and use of the <strong>https://vecttor.world</strong> website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the “Site”).
               </p>
               <p>
                 By accessing the Site and utilizing our agency services, you agree that you have read, understood, and agree to be bound by all of these Terms of Service. If you do not agree with all of these Terms of Service, then you are expressly prohibited from using our services.
@@ -75,7 +75,7 @@ const TermsOfService = () => {
             <h2 className="text-[22px] font-bold text-[#0B0F19] mb-4">2. Scope of Services</h2>
             <div className="text-gray-600 text-[14px] leading-relaxed space-y-4">
               <p>
-                Vector.Ai provides digital solutions including: performance marketing (Google & Meta Ads), custom software/web/mobile development, SEO optimization, and workflow automation.
+                Vecttor.world provides digital solutions including: performance marketing (Google & Meta Ads), custom software/web/mobile development, SEO optimization, and workflow automation.
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Retainers & Projects:</strong> The exact deliverables, milestones, and timelines will be defined in a separate Service Agreement (SOW) executed for each project.</li>
@@ -113,7 +113,7 @@ const TermsOfService = () => {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Client Ownership:</strong> Upon receipt of final payment, all custom-coded repositories, brand graphics, designed layouts, and custom ad creatives become the exclusive property of the Client.</li>
-                <li><strong>Agency Portfolio:</strong> Client grants Vector.Ai a non-exclusive license to display the completed work, logos, and case studies in the agency's portfolio, website, and promotional materials unless explicitly agreed otherwise.</li>
+                <li><strong>Agency Portfolio:</strong> Client grants Vecttor.world a non-exclusive license to display the completed work, logos, and case studies in the agency's portfolio, website, and promotional materials unless explicitly agreed otherwise.</li>
               </ul>
             </div>
           </section>
@@ -129,7 +129,7 @@ const TermsOfService = () => {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Timely Inputs:</strong> Providing copy text, high-resolution media assets, product details, and branding files within the agreed timeframes.</li>
-                <li><strong>System Credentials:</strong> Granting necessary access permissions (Google Analytics, Meta Business Suite, hosting environments, CRM accounts) securely to designated Vector.Ai team members.</li>
+                <li><strong>System Credentials:</strong> Granting necessary access permissions (Google Analytics, Meta Business Suite, hosting environments, CRM accounts) securely to designated Vecttor.world team members.</li>
                 <li><strong>Approval Cycles:</strong> Approving draft layouts and campaign setups within 3 business days to prevent delivery delays.</li>
               </ul>
             </div>
@@ -142,13 +142,13 @@ const TermsOfService = () => {
             <h2 className="text-[22px] font-bold text-[#0B0F19] mb-4">6. Limitation of Liability</h2>
             <div className="text-gray-600 text-[14px] leading-relaxed space-y-4">
               <p>
-                Vector.Ai provides services on an "as is" and "as available" basis.
+                Vecttor.world provides services on an "as is" and "as available" basis.
               </p>
               <p>
                 We execute performance marketing campaigns based on best practices and data-driven insights. However, we do not warrant or guarantee exact sales volumes, organic rankings, or ad conversions, as these are dependent on external market factors, search engine algorithm changes, and consumer trends.
               </p>
               <p>
-                In no event shall Vector.Ai, its directors (including Satyam Samrat Singh), or employees be liable for any indirect, incidental, or consequential damages (including loss of business profits or data leaks caused by third-party hosting platforms).
+                In no event shall Vecttor.world, its directors (including Satyam Samrat Singh), or employees be liable for any indirect, incidental, or consequential damages (including loss of business profits or data leaks caused by third-party hosting platforms).
               </p>
             </div>
           </section>

@@ -41,13 +41,13 @@ const FounderQuote = () => {
 
             {/* Quote Text */}
             <h3 className="text-xl md:text-[1.35rem] leading-relaxed font-display font-medium text-white mb-8 tracking-wide">
-              "At Vector.Ai, we don't follow the future—we build it. True innovation isn't about solving today's problems; it's about crafting technology that makes tomorrow's challenges obsolete. We are here to revolutionize how businesses scale through clean code, visionary design, and pure AI intelligence."
+              "At Vecttor.world, we don't follow the future—we build it. True innovation isn't about solving today's problems; it's about crafting technology that makes tomorrow's challenges obsolete. We are here to revolutionize how businesses scale through clean code, visionary design, and pure AI intelligence."
             </h3>
 
             {/* Author */}
             <div>
               <p className="text-base font-bold text-white mb-1">Satyam Samrat Singh</p>
-              <p className="text-sm font-medium text-gray-300">Founder & CEO, Vector.Ai</p>
+              <p className="text-sm font-medium text-gray-300">Founder & CEO, Vecttor.world</p>
             </div>
           </div>
 

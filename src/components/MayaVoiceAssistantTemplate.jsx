@@ -325,7 +325,7 @@ const MayaVoiceAssistantTemplate = () => {
                   </div>
                 </div>
                 <div className="text-gray-400 text-[9px] font-black tracking-widest pt-4">
-                  POWERED BY VAPI & VECTOR.AI
+                  POWERED BY VAPI & VECTTOR.WORLD
                 </div>
               </div>
             ) : chatMode === 'voice' || isCallActive ? (

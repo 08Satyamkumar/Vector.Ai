@@ -9,7 +9,7 @@ const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [chatMode, setChatMode] = useState(null); // null = Welcome Screen, 'text' = Text Chat, 'voice' = Voice session
   const [messages, setMessages] = useState([
-    { role: 'ai', content: 'Hi there! I am Maya, Vector.Ai\'s AI assistant. How can I help you today?' }
+    { role: 'ai', content: 'Hi there! I am Maya, Vecttor.world\'s AI assistant. How can I help you today?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -358,7 +358,7 @@ const ChatWidget = () => {
                   <div className="space-y-2">
                     <h3 className="text-[#2C2720] font-black text-2xl tracking-tight leading-none">Meet Maya</h3>
                     <p className="text-gray-600 text-xs px-2 leading-relaxed font-medium">
-                      Vector.Ai's smart representative. Select a mode to start conversation:
+                      Vecttor.world's smart representative. Select a mode to start conversation:
                     </p>
                   </div>
                   
@@ -404,7 +404,7 @@ const ChatWidget = () => {
                 </div>
 
                 <div className="text-gray-400 text-[9px] font-black tracking-widest select-none pt-4 z-10">
-                  POWERED BY VECTOR.AI IT SOLUTION
+                  POWERED BY VECTTOR.WORLD IT SOLUTION
                 </div>
               </div>
             ) : chatMode === 'voice' || isCallActive ? (
@@ -517,7 +517,7 @@ const ChatWidget = () => {
                   </button>
                 </form>
                 <div className="text-center mt-3 text-gray-400 text-[10px] font-bold">
-                  Powered by <span className="text-gray-500 font-black">Vector.Ai IT Solution</span>
+                  Powered by <span className="text-gray-500 font-black">Vecttor.world IT Solution</span>
                 </div>
               </div>
             )}

@@ -61,7 +61,7 @@ const CookiePolicy = () => {
                 A cookie is a small text file containing a string of characters that is placed on your computer or mobile device when you visit a website. It helps the site recognize your browser upon your next visit, saving settings, preferences, and securing logins.
               </p>
               <p>
-                Cookies set by the website owner (in this case, Vector.Ai) are called "first-party cookies". Cookies set by parties other than the website owner are called "third-party cookies". Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., interactive content, analytics).
+                Cookies set by the website owner (in this case, Vecttor.world) are called "first-party cookies". Cookies set by parties other than the website owner are called "third-party cookies". Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., interactive content, analytics).
               </p>
             </div>
           </section>

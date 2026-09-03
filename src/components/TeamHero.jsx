@@ -55,7 +55,7 @@ const TeamHero = () => {
               Satyam Samrat Singh
             </h2>
             <p className="text-gray-400 text-[15px] md:text-[16px] leading-relaxed mb-10 max-w-lg">
-              "At Vector.Ai, we don't just build software; we engineer growth. Our mission is to accelerate digital evolution by creating intelligent, scalable platforms that empower visionary businesses to lead in an AI-driven world."
+              "At Vecttor.world, we don't just build software; we engineer growth. Our mission is to accelerate digital evolution by creating intelligent, scalable platforms that empower visionary businesses to lead in an AI-driven world."
             </p>
             
             {/* Social Links */}

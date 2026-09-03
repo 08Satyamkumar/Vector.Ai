@@ -60,10 +60,10 @@ const PrivacyPolicy = () => {
             <h2 className="text-[22px] font-bold text-[#0B0F19] mb-4">1. Introduction</h2>
             <div className="text-gray-600 text-[14px] leading-relaxed space-y-4">
               <p>
-                Welcome to Vector.Ai. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at <strong>vector.ai09@gmail.com</strong>.
+                Welcome to Vecttor.world. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at <strong>vector.ai09@gmail.com</strong>.
               </p>
               <p>
-                When you visit our website <strong>https://vector-ai-solution.vercel.app</strong> and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy notice, we describe our privacy policy. We seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it.
+                When you visit our website <strong>https://vecttor.world</strong> and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy notice, we describe our privacy policy. We seek to explain to you in the clearest way possible what information we collect, how we use it, and what rights you have in relation to it.
               </p>
             </div>
           </section>
@@ -162,7 +162,7 @@ const PrivacyPolicy = () => {
                 If you have questions or comments about this policy, or want to exercise your user rights, you may email us directly at:
               </p>
               <div className="bg-[#F8F9FA] p-6 rounded-2xl border border-gray-100 w-fit">
-                <p className="font-bold text-[#0B0F19] mb-1">Vector.Ai Legal Team</p>
+                <p className="font-bold text-[#0B0F19] mb-1">Vecttor.world Legal Team</p>
                 <p className="text-gray-500 mb-1">Email: <strong>vector.ai09@gmail.com</strong></p>
                 <p className="text-gray-500">Address: Gaur Yamuna City, Greater Noida, Uttar Pradesh</p>
               </div>

@@ -12,7 +12,7 @@ const ContactMap = () => {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Vector.Ai Location"
+          title="Vecttor.world Location"
         ></iframe>
       </div>
     </section>
