@@ -48,30 +48,31 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-brand-bg/95 backdrop-blur-sm px-6 lg:px-20 py-4 flex items-center justify-between z-[100] border-b border-gray-200">
+    <nav className="fixed top-0 left-0 right-0 bg-brand-bg/95 backdrop-blur-sm px-4 sm:px-6 lg:px-10 xl:px-16 py-3 md:py-3.5 flex items-center justify-between z-[100] border-b border-gray-200">
       
-      {/* Mobile Menu Button (Hamburger) */}
-      <button 
-        className="lg:hidden p-2 -ml-2 text-[#0B0F19]"
-        onClick={() => setIsMobileMenuOpen(true)}
-        aria-label="Open Menu"
-      >
-        <Menu className="w-6 h-6" />
-      </button>
+      {/* Left Section: Hamburger (Mobile) + Logo anchored to Left */}
+      <div className="flex items-center gap-3 sm:gap-4">
+        {/* Mobile Menu Button (Hamburger) */}
+        <button 
+          className="lg:hidden p-1.5 -ml-1 text-[#0B0F19] hover:bg-gray-100 rounded-lg transition-colors"
+          onClick={() => setIsMobileMenuOpen(true)}
+          aria-label="Open Menu"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
 
-      {/* Logo */}
-      <div className="absolute left-1/2 -translate-x-1/2 lg:static lg:transform-none">
+        {/* Logo */}
         <a href="/" className="flex items-center">
           <img 
             src="/logo.png" 
             alt="Vecttor.world Logo" 
-            className="h-12 md:h-16 w-auto object-contain"
+            className="h-9 sm:h-10 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-200 hover:scale-[1.02]"
           />
         </a>
       </div>
 
       {/* Desktop Links */}
-      <div className="hidden lg:flex items-center space-x-8">
+      <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
         {navLinks.map((link) => {
           const path = getPath(link);
           const isActive = location.pathname === path;
@@ -80,7 +81,7 @@ const Navbar = () => {
             <Link
               key={link}
               to={path}
-              className={`text-[15px] transition-colors ${isActive ? 'font-extrabold text-black' : 'font-medium text-gray-600 hover:text-black'}`}
+              className={`text-[14px] xl:text-[15px] transition-colors whitespace-nowrap ${isActive ? 'font-extrabold text-black' : 'font-medium text-gray-600 hover:text-black'}`}
             >
               {link}
             </Link>
