@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'; // Team config trigger
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import config from '../data/companyConfig.json';
 
@@ -51,13 +51,21 @@ const Team = () => {
               }}
               className="group flex-none w-[calc(100vw-48px)] sm:w-[320px] snap-start flex flex-col items-start bg-white p-4 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all cursor-pointer"
             >
-              {/* Image */}
-              <div className="relative w-full aspect-[4/5] rounded-[1.75rem] overflow-hidden mb-6 bg-gray-200">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
-                />
+              {/* Image or Profile Avatar Symbol */}
+              <div className="relative w-full aspect-[4/5] rounded-[1.75rem] overflow-hidden mb-6 bg-gradient-to-b from-slate-100 to-slate-200 flex items-center justify-center">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100/80 text-slate-400 group-hover:text-[#0054D2] transition-colors">
+                    <div className="w-24 h-24 rounded-full bg-slate-200/90 flex items-center justify-center shadow-inner group-hover:bg-blue-50 transition-colors">
+                      <User className="w-14 h-14" />
+                    </div>
+                  </div>
+                )}
                 {/* Hover Overlay */}
                 <div className="absolute inset-x-0 bottom-0 p-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="bg-white/95 backdrop-blur-sm text-[#0B0F19] text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm capitalize">
