@@ -35,7 +35,7 @@ const TeamHero = () => {
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-gray-200">
               <img 
                 src="/satyam_ceo.png" 
-                alt="Satyam Samrat Singh - Founder & CEO" 
+                alt="Satyam Kumar - Founder & Lead Full Stack and AI/ML" 
                 className="w-full h-full object-cover"
               />
             </div>
@@ -49,10 +49,10 @@ const TeamHero = () => {
           {/* Text Side */}
           <div className="w-full md:w-3/5 text-left pt-4 md:pt-0">
             <div className="text-[#0054D2] text-[11px] font-bold tracking-[0.2em] uppercase mb-3">
-              FOUNDER & CEO
+              FOUNDER & LEAD FULL STACK AND AI/ML
             </div>
             <h2 className="text-[2.5rem] md:text-[3rem] font-display font-bold text-white mb-6 tracking-tight">
-              Satyam Samrat Singh
+              Satyam Kumar
             </h2>
             <p className="text-gray-400 text-[15px] md:text-[16px] leading-relaxed mb-10 max-w-lg">
               "At Vecttor.world, we don't just build software; we engineer growth. Our mission is to accelerate digital evolution by creating intelligent, scalable platforms that empower visionary businesses to lead in an AI-driven world."

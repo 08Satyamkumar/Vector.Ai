@@ -148,7 +148,7 @@ const TermsOfService = () => {
                 We execute performance marketing campaigns based on best practices and data-driven insights. However, we do not warrant or guarantee exact sales volumes, organic rankings, or ad conversions, as these are dependent on external market factors, search engine algorithm changes, and consumer trends.
               </p>
               <p>
-                In no event shall Vecttor.world, its directors (including Satyam Samrat Singh), or employees be liable for any indirect, incidental, or consequential damages (including loss of business profits or data leaks caused by third-party hosting platforms).
+                In no event shall Vecttor.world, its directors (including Satyam Kumar), or employees be liable for any indirect, incidental, or consequential damages (including loss of business profits or data leaks caused by third-party hosting platforms).
               </p>
             </div>
           </section>

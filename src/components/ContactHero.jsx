@@ -351,7 +351,7 @@ const ContactHero = () => {
               
               {/* Description */}
               <p className="text-gray-300 text-[14px] leading-relaxed mb-8 px-2">
-                Thank you for reaching out. Your project brief has been sent to our corporate inbox. Satyam Samrat Singh and the Vecttor.world strategy team will reach out to you within 24 hours.
+                Thank you for reaching out. Your project brief has been sent to our corporate inbox. Satyam Kumar and the Vecttor.world strategy team will reach out to you within 24 hours.
               </p>
 
               {/* Action Button */}

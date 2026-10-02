@@ -23,7 +23,7 @@ const FounderQuote = () => {
             <div className="w-40 md:w-52 aspect-[3/4] rounded-[2rem] border-2 border-white/10 overflow-hidden shadow-2xl relative">
               <img
                 src="/satyam_ceo.png"
-                alt="Satyam Samrat Singh"
+                alt="Satyam Kumar"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -46,8 +46,8 @@ const FounderQuote = () => {
 
             {/* Author */}
             <div>
-              <p className="text-base font-bold text-white mb-1">Satyam Samrat Singh</p>
-              <p className="text-sm font-medium text-gray-300">Founder & CEO, Vecttor.world</p>
+              <p className="text-base font-bold text-white mb-1">Satyam Kumar</p>
+              <p className="text-sm font-medium text-gray-300">Founder & Lead Full Stack and AI/ML, Vecttor.world</p>
             </div>
           </div>
 
